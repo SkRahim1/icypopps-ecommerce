@@ -1,162 +1,123 @@
 export const products = [
   {
-    id: "assorted-flavours",
-    title: "Assorted Flavours | Family Pack",
-    category: "Assorted Pack",
-    description: "An assorted box of our colourful Icy Popps. Taste all your childhood favourites in one box. Rich, fruity, and oh-so-refreshing!",
-    details: "Made with 100% RO Purified Water. Crafted from 100% Natural & Natural-Identical Ingredients. Enriched with Added Vitamin C, Gluten-Free goodness, 100% Hygienic & No Human Touch Process 3.0 Edible Ice.",
+    id: "pani-puri-family-pack",
+    title: "Pani Puri Family Pack (30 Puris + 5 Flavors)",
+    category: "Pani Puri Box",
+    description: "DESI SWAD. MODERN VIBES. The complete home showcase box containing 30 crispy, hollow semolina puris and 5 concentrated seasoning waters to satisfy every craving.",
+    details: "100% vegetarian. Made using clean RO-filtered water and high-grade flour. Includes sweet-tamarind, spicy-mint, lemon-tang, fiery-chilli, and cheese blast pastes. Perfect for family events or weekend get-togethers.",
     options: [
-      { name: "Pack of 33", price: 660, regularPrice: 750 },
-      { name: "Pack of 22", price: 450, regularPrice: 500 }
+      { name: "Family Pack (30 Puris)", price: 249.00, regularPrice: 299.00 },
+      { name: "Party Tub (60 Puris)", price: 499.00, regularPrice: 599.00 }
     ],
     images: [
-      "https://icypopps.com/cdn/shop/files/ALL_1_jpg_new.jpg",
-      "https://icypopps.com/cdn/shop/files/PACK-OF-3_jpg.jpg",
-      "https://icypopps.com/cdn/shop/files/ALL_2_jpg_new.jpg",
-      "https://icypopps.com/cdn/shop/files/shared_image_12.jpg"
+      "/images/brand-showcase.jpg",
+      "/images/cheese-blast.jpg",
+      "/images/classic-pudina.jpg",
+      "/images/fiery-chilli.jpg",
+      "/images/meetha-masti.jpg"
     ],
-    features: ["100% RO Water", "Vitamin C Enriched", "Gluten-Free", "No Touch Facility"]
+    features: ["Desi Swad", "Modern Vibes", "Hygienic preparation", "100% Vegetarian"]
   },
   {
-    id: "tasty-mix-fruit",
-    title: "Tasty Mix Flavours Icy Popps",
-    category: "Fruit Ice Pops",
-    description: "A colourful blend of your favourite fruits, frozen into one delicious treat. Refreshing, tasty, and perfect for sharing.",
-    details: "Made with 100% RO Purified Water. Crafted from 100% Natural & Natural-Identical Ingredients. Enriched with Added Vitamin C, Gluten-Free goodness, 100% Hygienic & No Human Touch Process 3.0 Edible Ice.",
+    id: "cheese-blast-box",
+    title: "Cheese Blast Pani Puri Showcase Kit",
+    category: "Signature Kit",
+    description: "Creamy liquid cheese meets crispy puris! A modern culinary twist on India's favorite street snack that will blow your tastebuds away.",
+    details: "Includes 24 crispy puris and a jar of our gourmet cheddar-infused liquid cheese dip. Burst of creaminess in every single bite!",
     options: [
-      { name: "Pack of 24", price: 480, regularPrice: 650 },
-      { name: "Pack of 36", price: 720, regularPrice: 900 }
+      { name: "Standard Kit (24 Puris)", price: 180.00, regularPrice: 220.00 },
+      { name: "Large Tub (48 Puris)", price: 320.00, regularPrice: 380.00 }
     ],
     images: [
-      "https://icypopps.com/cdn/shop/files/Mix-Fruit-flavour_new.png",
-      "https://icypopps.com/cdn/shop/files/1000-X-1000--Mix-Fruit-_01.jpg",
-      "https://icypopps.com/cdn/shop/files/1000-X-1000--Mix-Fruit-_02.jpg",
-      "https://icypopps.com/cdn/shop/files/1000-X-1000--Mix-Fruit-_03.jpg"
+      "/images/cheese-blast.jpg",
+      "/images/brand-showcase.jpg"
     ],
-    features: ["Natural Ingredients", "Vitamin C Enriched", "3.0 Edible Ice", "Hygienic Process"]
+    features: ["Creamy Cheese", "Crispy Puris", "Modern Twist", "100% Vegetarian"]
   },
   {
-    id: "chatpati-imli",
-    title: "Chatpati Imli Icy Popps",
-    subtitle: "Tangy Tamarind Frozen Treat",
-    category: "Tamarind Pop",
-    description: "Tangy and utterly nostalgic — this imli Icy Popps brings back memories of school-time candies with its chatpata twist.",
-    details: "Made with 100% RO Purified Water. Crafted from 100% Natural & Natural-Identical Ingredients. Enriched with Added Vitamin C, Gluten-Free goodness, 100% Hygienic & No Human Touch Process 3.0 Edible Ice.",
+    id: "classic-pudina-concentrate",
+    title: "Classic Pudina Water Concentrate",
+    category: "Water Blend",
+    description: "Refreshing mint water crafted with traditional green herbs and hand-ground spices. Tangy, cool, and classic.",
+    details: "Concentrated mint-coriander paste. Just dilute with cold water and ice. Serves up to 50 puris. Rich in iron and digestive spices.",
     options: [
-      { name: "Pack of 24", price: 480, regularPrice: 750 },
-      { name: "Pack of 12", price: 250, regularPrice: 380 }
+      { name: "250ml Bottle", price: 120.00, regularPrice: 150.00 },
+      { name: "500ml Bottle", price: 220.00, regularPrice: 280.00 }
     ],
     images: [
-      "https://icypopps.com/cdn/shop/files/Imli.png",
-      "https://icypopps.com/cdn/shop/files/Imli-w-bg.png"
+      "/images/classic-pudina.jpg",
+      "/images/brand-showcase.jpg"
     ],
-    features: ["100% RO Water", "Added Vitamin C", "Retro Imli Tang", "Gluten-Free"]
+    features: ["Fresh Mint", "Digestive Herbs", "RO Purified", "Low Calorie"]
   },
   {
-    id: "guava-delight",
-    title: "Guava Delight Icy Popps",
-    subtitle: "Refreshing Guava Frozen Treat",
-    category: "Guava Pop",
-    description: "Soft, mellow sweetness with a fruity freshness that feels like biting into a perfectly ripe guava.",
-    details: "Made with 100% RO Purified Water. Crafted from 100% Natural & Natural-Identical Ingredients. Enriched with Added Vitamin C, Gluten-Free goodness, 100% Hygienic & No Human Touch Process 3.0 Edible Ice.",
+    id: "fiery-chilli-spicy-dip",
+    title: "Fiery Chilli Hot Water Concentrate",
+    category: "Water Blend",
+    description: "Bold. Spicy. Unstoppable. For those who love the real heat! Made with dried red chillies and black pepper.",
+    details: "Spicy red concentrate water. Extreme tang and heat designed to fill your puris with a bursting hot sensation. Handle with care!",
     options: [
-      { name: "Pack of 24", price: 480, regularPrice: 650 },
-      { name: "Pack of 12", price: 250, regularPrice: 350 }
+      { name: "250ml Bottle", price: 130.00, regularPrice: 160.00 },
+      { name: "500ml Bottle", price: 240.00, regularPrice: 300.00 }
     ],
     images: [
-      "https://icypopps.com/cdn/shop/files/Guava_b8ac2825-6d47-4009-b65c-9343d5fe45ca.png",
-      "https://icypopps.com/cdn/shop/files/Guava-1.png"
+      "/images/fiery-chilli.jpg",
+      "/images/brand-showcase.jpg"
     ],
-    features: ["Real Guava Zest", "Gluten-Free", "Vitamin C Enriched", "No Human Touch"]
+    features: ["Red Guntur Chilli", "Extreme Heat", "Tangy Twist", "Spiced Kick"]
   },
   {
-    id: "kachchi-keri",
-    title: "Kachchi Keri Icy Popps",
-    subtitle: "Tangy Raw Mango Frozen Treat",
-    category: "Raw Mango Pop",
-    description: "The raw mango magic. A zesty blast of kachchi keri with just the right amount of tang and sweet.",
-    details: "Made with 100% RO Purified Water. Crafted from 100% Natural & Natural-Identical Ingredients. Enriched with Added Vitamin C, Gluten-Free goodness, 100% Hygienic & No Human Touch Process 3.0 Edible Ice.",
+    id: "meetha-masti-sweet-sauce",
+    title: "Meetha Masti Sweet Date-Tamarind Sauce",
+    category: "Sweet Sauce",
+    description: "A sweet surprise in every bite! Fun, unique, and simply irresistible. Rich dates, tamarind, and jaggery blend.",
+    details: "Thick dates and sweet tamarind paste. Dilute or drizzle directly inside the puris. Kids' favorite and balances the spicy mint water.",
     options: [
-      { name: "Pack of 24", price: 480, regularPrice: 650 },
-      { name: "Pack of 12", price: 250, regularPrice: 350 }
+      { name: "200g Jar", price: 110.00, regularPrice: 140.00 },
+      { name: "400g Jar", price: 200.00, regularPrice: 250.00 }
     ],
     images: [
-      "https://icypopps.com/cdn/shop/files/kachchi-keri.png",
-      "https://icypopps.com/cdn/shop/files/Kachi-keri.png"
+      "/images/meetha-masti.jpg",
+      "/images/brand-showcase.jpg"
     ],
-    features: ["Zesty Raw Mango", "100% RO Water", "Added Vitamin C", "3.0 Edible Ice"]
+    features: ["Sweet Dates", "Organic Jaggery", "Tangy Tamarind", "Rich & Smooth"]
   }
 ];
 
 export const flavorShowcase = [
   {
-    name: "Rose",
-    color: "#ff8da1",
-    tagline: "A sweet floral treat that takes you back to summer afternoons.",
-    gradient: "linear-gradient(135deg, #ffeef1 0%, #ffcbd4 100%)",
-    image: "https://icypopps.com/cdn/shop/files/rose.png"
+    name: "Classic Pudina",
+    color: "#1F5E4A",
+    tagline: "Refreshing mint water crafted with traditional herbs and authentic spices.",
+    gradient: "linear-gradient(135deg, #FFF6EE 0%, #e8f5e9 100%)",
+    image: "/images/classic-pudina.jpg"
   },
   {
-    name: "Kala Khatta",
-    color: "#832483",
-    tagline: "Tangy, zesty, and bursting with street-style magic.",
-    gradient: "linear-gradient(135deg, #f7e6f7 0%, #dcaadc 100%)",
-    image: "https://icypopps.com/cdn/shop/files/KK-changed.png"
+    name: "Cheese Blast",
+    color: "#FF9A3D",
+    tagline: "Creamy cheese meets crispy puris for a delicious twist you won't forget.",
+    gradient: "linear-gradient(135deg, #FFF6EE 0%, #fff3e0 100%)",
+    image: "/images/cheese-blast.jpg"
   },
   {
-    name: "Imli",
-    color: "#a0522d",
-    tagline: "Chatpata tamarind fun that’s pure childhood nostalgia.",
-    gradient: "linear-gradient(135deg, #fbf2eb 0%, #e0c8b0 100%)",
-    image: "https://icypopps.com/cdn/shop/files/Imli.png"
+    name: "Fiery Chilli",
+    color: "#F05A4A",
+    tagline: "Bold. Spicy. Unstoppable. For those who love the heat!",
+    gradient: "linear-gradient(135deg, #FFF6EE 0%, #ffe8e6 100%)",
+    image: "/images/fiery-chilli.jpg"
   },
   {
-    name: "Lemon",
-    color: "#ffd700",
-    tagline: "A zingy citrus pop that instantly cools you down.",
-    gradient: "linear-gradient(135deg, #fffee5 0%, #fbf3a3 100%)",
-    image: "https://icypopps.com/cdn/shop/files/Lemon.png"
+    name: "Meetha Masti",
+    color: "#b03a2e",
+    tagline: "A sweet surprise in every bite. Fun. Unique. Simply Irresistible.",
+    gradient: "linear-gradient(135deg, #FFF6EE 0%, #fbebeb 100%)",
+    image: "/images/meetha-masti.jpg"
   },
   {
-    name: "Mango",
-    color: "#ffaa00",
-    tagline: "The king of fruits, sweet, juicy, and gold as summer sunshine.",
-    gradient: "linear-gradient(135deg, #fff9e6 0%, #fcd68a 100%)",
-    image: "https://icypopps.com/cdn/shop/files/Mango_8f9efa8c-444d-47ca-b1ea-e5565734a4b1.png"
-  },
-  {
-    name: "Guava",
-    color: "#ff6b8b",
-    tagline: "Lush pink guava goodness with a spicy pinch of nostagia.",
-    gradient: "linear-gradient(135deg, #ffeef1 0%, #fca6b8 100%)",
-    image: "https://icypopps.com/cdn/shop/files/Guava_b8ac2825-6d47-4009-b65c-9343d5fe45ca.png"
-  },
-  {
-    name: "Orange",
-    color: "#ff8c00",
-    tagline: "Tangy-sweet citrus splash that keeps you dynamic and refreshed.",
-    gradient: "linear-gradient(135deg, #fff0e0 0%, #ffd09f 100%)",
-    image: "https://icypopps.com/cdn/shop/files/Orange.png"
-  },
-  {
-    name: "Jeera",
-    color: "#8b5a2b",
-    tagline: "Zesty masala digestif pop with that refreshing street side fizz.",
-    gradient: "linear-gradient(135deg, #f7f1eb 0%, #d2bba0 100%)",
-    image: "https://icypopps.com/cdn/shop/files/Jeera.png"
-  },
-  {
-    name: "Strawberry",
-    color: "#ff4d6d",
-    tagline: "Fruity strawberry blush that's sweet and playful.",
-    gradient: "linear-gradient(135deg, #ffeaf0 0%, #fca3b7 100%)",
-    image: "https://icypopps.com/cdn/shop/files/Strawberry.png"
-  },
-  {
-    name: "Kachchi Keri",
-    color: "#4caf50",
-    tagline: "Raw green mango punch with a chatpata sour pop.",
-    gradient: "linear-gradient(135deg, #eef7ee 0%, #b2dbb3 100%)",
-    image: "https://icypopps.com/cdn/shop/files/kachchi-keri.png"
+    name: "Imli Chatpata",
+    color: "#873600",
+    tagline: "Tangy explosion of tamarind and cumin secret spices that hit all the right spots.",
+    gradient: "linear-gradient(135deg, #FFF6EE 0%, #efe5de 100%)",
+    image: "/images/brand-showcase.jpg"
   }
 ];

@@ -109,13 +109,13 @@ function init() {
 // STATE PERSISTENCE
 // ----------------------------------------------------
 function saveLocalStorage() {
-  localStorage.setItem('icypopps_cart', JSON.stringify(state.cart));
-  localStorage.setItem('icypopps_wishlist', JSON.stringify(state.wishlist));
+  localStorage.setItem('bubblebox_cart', JSON.stringify(state.cart));
+  localStorage.setItem('bubblebox_wishlist', JSON.stringify(state.wishlist));
 }
 
 function loadLocalStorage() {
-  const localCart = localStorage.getItem('icypopps_cart');
-  const localWishlist = localStorage.getItem('icypopps_wishlist');
+  const localCart = localStorage.getItem('bubblebox_cart');
+  const localWishlist = localStorage.getItem('bubblebox_wishlist');
   if (localCart) state.cart = JSON.parse(localCart);
   if (localWishlist) state.wishlist = JSON.parse(localWishlist);
 }
@@ -275,7 +275,7 @@ function selectFlavor(index) {
       
       // Update contents
       DOM.flavorImage.src = flavor.image;
-      DOM.flavorImage.alt = `${flavor.name} Icy Pop`;
+      DOM.flavorImage.alt = `${flavor.name} Pani Puri`;
       DOM.flavorName.textContent = flavor.name;
       DOM.flavorTagline.textContent = flavor.tagline;
       

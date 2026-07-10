@@ -1,23 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@1,400..900&display=swap');
+
 /* Core CSS Variables and Resets */
 :root {
-  --color-primary: #ff000d;
-  --color-primary-dark: #c2000a;
-  --color-accent: #ff5b00;
-  --color-accent-hover: #e04f00;
-  --color-text: #000000;
+  --color-primary: #F05A4A;          /* bubblebox primary red */
+  --color-primary-dark: #d04637;
+  --color-secondary: #1F5E4A;        /* bubblebox secondary green */
+  --color-secondary-dark: #164636;
+  --color-accent: #FF9A3D;           /* bubblebox accent orange */
+  --color-accent-hover: #e5872e;
+  --color-text: #222222;             /* bubblebox text dark */
   --color-text-muted: #555555;
-  --color-bg-white: #ffffff;
-  --color-bg-light: #f9f9f9;
-  --color-bg-yellow: #fff9e6;
-  --color-border: #dedede;
-  --color-success: #28a745;
-  --color-error: #dc3545;
+  --color-bg-white: #FFF6EE;         /* bubblebox background light warm */
+  --color-bg-light: #fcf5ee;
+  --color-bg-yellow: #f5ebe0;
+  --color-border: #e8dcd0;
+  --color-success: #1F5E4A;
+  --color-error: #F05A4A;
   
-  --font-body: 'Montserrat', sans-serif;
+  --font-body: 'EB Garamond', serif;
+  --font-heading: 'Playfair Display', serif;
   --header-height: 80px;
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-premium: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 20px 40px rgba(255, 91, 0, 0.15);
+  --shadow-premium: 0 10px 30px rgba(31, 94, 74, 0.08);
+  --shadow-hover: 0 20px 40px rgba(240, 90, 74, 0.15);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Custom Styled Brand Logo for header */
+.header-logo-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+.brand-logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.7rem;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.brand-logo-text .logo-accent {
+  color: var(--color-accent);
+}
+
+.brand-logo-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin-top: 1px;
 }
 
 * {
@@ -179,7 +220,7 @@ button {
 
 /* Header Navigation */
 .sf-header {
-  background-color: var(--color-accent);
+  background-color: var(--color-secondary);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   z-index: 999;
