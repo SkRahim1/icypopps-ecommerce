@@ -2190,15 +2190,18 @@ hr {
 .mobile-drawer-content {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 70px);
-  justify-content: space-between;
-  padding: 30px 24px !important;
+  height: calc(100% - 70px); /* Exactly fills remaining height below drawer header */
+  padding: 20px !important;
+  overflow: hidden; /* Lock drawer in place so footer button never scrolls out of view */
 }
 
 .mobile-nav-links {
   list-style: none;
   padding: 0;
   margin: 0;
+  flex: 1; /* Grow to fill middle space */
+  overflow-y: auto; /* Enable scroll ONLY on the link list itself if links exceed height */
+  padding-bottom: 20px;
 }
 
 .mobile-nav-item {
@@ -2272,16 +2275,17 @@ hr {
 /* Account panel fixed bottom styling */
 .mobile-drawer-account {
   margin-top: auto;
-  padding-top: 30px;
-  padding-bottom: 15px;
-  border-top: 1px solid #f0f0f0;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  border-top: 1px solid var(--color-border);
+  flex-shrink: 0; /* Never shrink or slide out of view */
 }
 
 .mobile-drawer-account h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #000;
-  margin-bottom: 15px;
+  color: var(--color-text);
+  margin-bottom: 10px;
   text-transform: none;
 }
 
@@ -2290,7 +2294,7 @@ hr {
   border-radius: 0 !important; /* Flat corner button */
   background-color: var(--color-accent) !important;
   color: white !important;
-  padding: 14px 20px !important;
+  padding: 12px 20px !important;
   font-weight: 700 !important;
   font-size: 0.95rem !important;
   text-transform: uppercase !important;
@@ -2301,4 +2305,85 @@ hr {
 .mobile-login-btn:hover {
   background-color: var(--color-primary) !important;
   transform: none !important;
+}
+
+/* Premium Logo Image badge */
+.brand-logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: #ffffff; /* White card box to frame black logo on deep colored headers */
+  padding: 6px 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: var(--transition-smooth);
+}
+
+.brand-logo-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Slide 1: CSS Animated Columns (Mirrors original Icy Popps moving stripes columns style) */
+.hero-animated-columns {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-col {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-col:last-child {
+  border-right: none;
+}
+
+.hero-col-inner {
+  display: flex;
+  flex-direction: column;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.col-item {
+  height: 50%;
+  width: 100%;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+/* Scroll Up and Scroll Down marquee speeds */
+.scroll-up {
+  animation: colScrollUp 18s linear infinite;
+}
+
+.scroll-down {
+  animation: colScrollDown 18s linear infinite;
+}
+
+/* Staggered duration offsets for dynamic parallax aesthetic */
+.animate-col-1 .scroll-up { animation-duration: 18s; }
+.animate-col-2 .scroll-down { animation-duration: 20s; }
+.animate-col-3 .scroll-up { animation-duration: 16s; }
+.animate-col-4 .scroll-down { animation-duration: 22s; }
+.animate-col-5 .scroll-up { animation-duration: 19s; }
+
+@keyframes colScrollUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes colScrollDown {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
 }

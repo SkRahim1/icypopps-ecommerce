@@ -33,9 +33,8 @@
         </button>
 
         <!-- Brand Logo -->
-        <a href="/" class="header-logo-wrap">
-          <div class="brand-logo-text">bubble<span class="logo-accent">box</span></div>
-          <div class="brand-logo-tagline">DESI SWAD. MODERN VIBES.</div>
+        <a href="/" class="header-logo">
+          <img src="/images/logo.jpg" alt="bubblebox Logo" class="brand-logo-img" />
         </a>
 
         <!-- Desktop Navigation Links (Exactly Matching Screenshot) -->
@@ -91,9 +90,8 @@
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-nav-drawer" class="drawer drawer-left">
       <div class="drawer-header">
-        <a href="/" class="header-logo-wrap">
-          <div class="brand-logo-text">bubble<span class="logo-accent">box</span></div>
-          <div class="brand-logo-tagline">DESI SWAD. MODERN VIBES.</div>
+        <a href="/" class="header-logo">
+          <img src="/images/logo.jpg" alt="bubblebox Logo" class="brand-logo-img" />
         </a>
         <button id="close-mobile-nav" class="close-btn" aria-label="Close menu">&times;</button>
       </div>
@@ -198,8 +196,41 @@
     <section class="hero-section">
       <div class="hero-slider-container">
         <div class="hero-slides-wrapper" id="hero-slides-wrapper">
-          <!-- Slide 1: Brand Showcase Chef Presentation -->
-          <div class="hero-slide-item active" style="--bg-url-desktop: url('/images/brand-showcase.jpg'); --bg-url-mobile: url('/images/brand-showcase.jpg');"></div>
+          <!-- Slide 1: Animated Brand Showcase Columns (Replicates original columns scroll animation) -->
+          <div class="hero-slide-item active hero-animated-slide">
+            <div class="hero-animated-columns">
+              <div class="hero-col animate-col-1">
+                <div class="hero-col-inner scroll-up">
+                  <div class="col-item" style="background-image: url('/images/classic-pudina.jpg');"></div>
+                  <div class="col-item" style="background-image: url('/images/classic-pudina.jpg');"></div>
+                </div>
+              </div>
+              <div class="hero-col animate-col-2">
+                <div class="hero-col-inner scroll-down">
+                  <div class="col-item" style="background-image: url('/images/cheese-blast.jpg');"></div>
+                  <div class="col-item" style="background-image: url('/images/cheese-blast.jpg');"></div>
+                </div>
+              </div>
+              <div class="hero-col animate-col-3">
+                <div class="hero-col-inner scroll-up">
+                  <div class="col-item" style="background-image: url('/images/fiery-chilli.jpg');"></div>
+                  <div class="col-item" style="background-image: url('/images/fiery-chilli.jpg');"></div>
+                </div>
+              </div>
+              <div class="hero-col animate-col-4">
+                <div class="hero-col-inner scroll-down">
+                  <div class="col-item" style="background-image: url('/images/meetha-masti.jpg');"></div>
+                  <div class="col-item" style="background-image: url('/images/meetha-masti.jpg');"></div>
+                </div>
+              </div>
+              <div class="hero-col animate-col-5">
+                <div class="hero-col-inner scroll-up">
+                  <div class="col-item" style="background-image: url('/images/brand-showcase.jpg');"></div>
+                  <div class="col-item" style="background-image: url('/images/brand-showcase.jpg');"></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!-- Slide 2: Cheese Blast flavour -->
           <div class="hero-slide-item" style="--bg-url-desktop: url('/images/cheese-blast.jpg'); --bg-url-mobile: url('/images/cheese-blast.jpg');"></div>
@@ -325,9 +356,9 @@
     <section class="about-section" id="about-section">
       <div class="about-grid">
         <div class="about-content">
-          <h2>Desi Swad, Modern Vibes.</h2>
-          <p class="lead">bubblebox is on a mission to reimagine India's favorite street side snack, but in a healthier, cleaner, and cooler format.</p>
-          <p>Made using clean RO-filtered water, premium ingredients, and 100% hygienic preparation standards, bubblebox brings you the perfect blend of nostalgic taste and modern quality. We make it easy, fun, and worry-free to enjoy crispy, tangy, and sweet Pani Puris once again.</p>
+          <h2>Savor the Streets with Every Crunch</h2>
+          <p class="lead">Zesty flavors. Crunchy bites. Your next street food obsession is finally here.</p>
+          <p>We bring you the ultimate premium pani puri experience that hits the spot—fast, remarkably fresh, and packed with traditional taste. Crafted safely with absolute hygiene, we deliver pure joy and an unforgettable burst of flavor to your city.</p>
           <div class="features-badge-container">
             <div class="badge-item">
               <span class="badge-icon" style="font-size: 2.2rem; display: block; margin-bottom: 6px;">🌿</span>
@@ -527,7 +558,9 @@
     <footer class="sf-footer">
       <div class="footer-top">
         <div class="footer-col brand-col">
-          <div class="brand-logo-text" style="color: #fff; margin-bottom: 12px; font-size: 1.8rem; font-weight: 800; font-family: sans-serif; letter-spacing: -0.03em;">bubble<span class="logo-accent" style="color: #FF9A3D;">box</span></div>
+          <a href="/" class="header-logo" style="margin-bottom: 12px; display: inline-block;">
+            <img src="/images/logo.jpg" alt="bubblebox Logo" class="brand-logo-img" />
+          </a>
           <p>Enjoy the perfect Indian street-side Pani Puri snack with modern, hygienic, and premium ingredients. Desi Swad, Modern Vibes!</p>
         </div>
         <div class="footer-col links-col">
@@ -556,7 +589,6 @@
       <div class="footer-bottom">
         <div class="footer-bottom-container">
           <p>© 2026 bubbleboxfoods.com | All rights reserved by Bubble Box Foods Private Limited.</p>
-          <p>Designed & Developed for Showcase. Active Assets sourced from official store.</p>
         </div>
       </div>
     </footer>
