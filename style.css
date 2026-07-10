@@ -70,8 +70,8 @@ button {
 
 .w-full { width: 100%; }
 .hide { display: none !important; }
-.desktop-only { display: block; }
-.mobile-only { display: none; }
+.desktop-only { display: block !important; }
+.mobile-only { display: none !important; }
 
 /* Buttons */
 .primary-btn {
@@ -2050,6 +2050,7 @@ hr {
 
   .desktop-only { display: none !important; }
   .mobile-only { display: block !important; }
+  button.mobile-only, a.mobile-only { display: flex !important; }
 
   section {
     padding: 60px 0;
