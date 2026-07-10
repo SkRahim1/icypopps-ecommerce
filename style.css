@@ -671,13 +671,17 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center bottom; /* Aligns bottom of columns/animation with the bottom wave */
-  background-repeat: no-repeat;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.8s ease, visibility 0.8s ease;
-  background-image: var(--bg-url-desktop);
+}
+
+.hero-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
 }
 
 .hero-slide-item.active {
@@ -763,9 +767,6 @@ button {
   .hero-slider-container {
     height: 100vw; /* Square Mobile ratio */
     max-height: 450px;
-  }
-  .hero-slide-item {
-    background-image: var(--bg-url-mobile);
   }
   .wave-divider {
     height: 36px;
