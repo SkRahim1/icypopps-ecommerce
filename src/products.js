@@ -10,11 +10,11 @@ export const products = [
       { name: "Party Tub (60 Puris)", price: 499.00, regularPrice: 599.00 }
     ],
     images: [
-      "/images/brand-showcase.jpg",
-      "/images/cheese-blast.jpg",
-      "/images/classic-pudina.jpg",
-      "/images/fiery-chilli.jpg",
-      "/images/meetha-masti.jpg"
+      "images/brand-showcase.jpg",
+      "images/cheese-blast.jpg",
+      "images/classic-pudina.jpg",
+      "images/fiery-chilli.jpg",
+      "images/meetha-masti.jpg"
     ],
     features: ["Desi Swad", "Modern Vibes", "Hygienic preparation", "100% Vegetarian"]
   },
@@ -29,8 +29,8 @@ export const products = [
       { name: "Large Tub (48 Puris)", price: 320.00, regularPrice: 380.00 }
     ],
     images: [
-      "/images/cheese-blast.jpg",
-      "/images/brand-showcase.jpg"
+      "images/cheese-blast.jpg",
+      "images/brand-showcase.jpg"
     ],
     features: ["Creamy Cheese", "Crispy Puris", "Modern Twist", "100% Vegetarian"]
   },
@@ -45,8 +45,8 @@ export const products = [
       { name: "500ml Bottle", price: 220.00, regularPrice: 280.00 }
     ],
     images: [
-      "/images/classic-pudina.jpg",
-      "/images/brand-showcase.jpg"
+      "images/classic-pudina.jpg",
+      "images/brand-showcase.jpg"
     ],
     features: ["Fresh Mint", "Digestive Herbs", "RO Purified", "Low Calorie"]
   },
@@ -61,8 +61,8 @@ export const products = [
       { name: "500ml Bottle", price: 240.00, regularPrice: 300.00 }
     ],
     images: [
-      "/images/fiery-chilli.jpg",
-      "/images/brand-showcase.jpg"
+      "images/fiery-chilli.jpg",
+      "images/brand-showcase.jpg"
     ],
     features: ["Red Guntur Chilli", "Extreme Heat", "Tangy Twist", "Spiced Kick"]
   },
@@ -77,8 +77,8 @@ export const products = [
       { name: "400g Jar", price: 200.00, regularPrice: 250.00 }
     ],
     images: [
-      "/images/meetha-masti.jpg",
-      "/images/brand-showcase.jpg"
+      "images/meetha-masti.jpg",
+      "images/brand-showcase.jpg"
     ],
     features: ["Sweet Dates", "Organic Jaggery", "Tangy Tamarind", "Rich & Smooth"]
   }
@@ -90,34 +90,34 @@ export const flavorShowcase = [
     color: "#1F5E4A",
     tagline: "Refreshing mint water crafted with traditional herbs and authentic spices.",
     gradient: "linear-gradient(135deg, #FFF6EE 0%, #e8f5e9 100%)",
-    image: "/images/classic-pudina.jpg"
+    image: "images/classic-pudina.jpg"
   },
   {
     name: "Cheese Blast",
     color: "#FF9A3D",
     tagline: "Creamy cheese meets crispy puris for a delicious twist you won't forget.",
     gradient: "linear-gradient(135deg, #FFF6EE 0%, #fff3e0 100%)",
-    image: "/images/cheese-blast.jpg"
+    image: "images/cheese-blast.jpg"
   },
   {
     name: "Fiery Chilli",
     color: "#F05A4A",
     tagline: "Bold. Spicy. Unstoppable. For those who love the heat!",
     gradient: "linear-gradient(135deg, #FFF6EE 0%, #ffe8e6 100%)",
-    image: "/images/fiery-chilli.jpg"
+    image: "images/fiery-chilli.jpg"
   },
   {
     name: "Meetha Masti",
     color: "#b03a2e",
     tagline: "A sweet surprise in every bite. Fun. Unique. Simply Irresistible.",
     gradient: "linear-gradient(135deg, #FFF6EE 0%, #fbebeb 100%)",
-    image: "/images/meetha-masti.jpg"
+    image: "images/meetha-masti.jpg"
   },
   {
     name: "Imli Chatpata",
     color: "#873600",
     tagline: "Tangy explosion of tamarind and cumin secret spices that hit all the right spots.",
     gradient: "linear-gradient(135deg, #FFF6EE 0%, #efe5de 100%)",
-    image: "/images/brand-showcase.jpg"
+    image: "images/brand-showcase.jpg"
   }
 ];
