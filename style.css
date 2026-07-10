@@ -639,16 +639,16 @@ button {
 }
 
 .wave1 {
-  animation: moveWave 10s linear infinite;
+  animation: moveWave 6s linear infinite;
 }
 
 .wave2 {
-  animation: moveWave 7s linear infinite reverse;
+  animation: moveWave 4s linear infinite reverse;
   opacity: 0.35;
 }
 
 .wave3 {
-  animation: moveWave 14s linear infinite;
+  animation: moveWave 8s linear infinite;
   opacity: 0.2;
 }
 
