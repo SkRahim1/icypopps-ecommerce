@@ -73,11 +73,16 @@ html {
   background-color: var(--color-bg-white);
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   font-family: var(--font-body);
   color: var(--color-text);
   line-height: 1.6;
-  overflow-x: hidden;
   background-color: var(--color-bg-white);
 }
 
@@ -218,10 +223,12 @@ button {
   100% { transform: translate3d(-50%, 0, 0); }
 }
 
-/* Header Navigation */
+/* Header Navigation - Premium Float with Glassmorphism */
 .sf-header {
-  background-color: var(--color-secondary);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(31, 94, 74, 0.95); /* Deep green with transparency */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   z-index: 999;
   transition: var(--transition-smooth);
@@ -230,7 +237,7 @@ button {
 .sticky-header {
   position: sticky;
   top: 0;
-  box-shadow: var(--shadow-premium);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
 .header-container {
@@ -244,7 +251,7 @@ button {
 }
 
 .header-logo img {
-  height: 50px;
+  height: 48px;
   width: auto;
 }
 
@@ -267,19 +274,40 @@ button {
 }
 
 .nav-links > li > a {
-  padding: 0 20px;
+  position: relative;
+  padding: 0 16px;
   color: var(--color-bg-white);
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-weight: 600;
+  font-size: 0.9rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   height: 100%;
   display: flex;
   align-items: center;
+  transition: color 0.3s ease;
+}
+
+.nav-links > li > a::after {
+  content: '';
+  position: absolute;
+  bottom: 22px; /* Positioned cleanly above base */
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-links > li:hover > a::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .nav-links > li:hover > a {
-  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-accent) !important;
+  background: none !important;
 }
 
 /* Dropdown Menu */
@@ -2390,12 +2418,4 @@ hr {
 @keyframes colScrollDown {
   0% { transform: translateY(-50%); }
   100% { transform: translateY(0); }
-}
-
-/* Mobile responsive columns layout adjustment */
-@media (max-width: 768px) {
-  /* Only show columns 1 and 2 to prevent squishing on narrow screens */
-  .hero-animated-columns .hero-col:nth-child(n+3) {
-    display: none;
-  }
 }
