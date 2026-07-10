@@ -583,7 +583,7 @@ button {
 
 .hero-slider-container {
   width: 100vw;
-  height: 36.47vw; /* Dynamic aspect ratio matching 2800x1021 banner images */
+  height: 480px; /* Fixed desktop height to fit viewport cleanly without scrolling */
   position: relative;
   overflow: hidden;
   background-color: #f75b00;
@@ -601,8 +601,8 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: 100% 100%; /* Maps perfectly to container aspect ratio without clipping */
-  background-position: center;
+  background-size: cover; /* Covers container width and height */
+  background-position: center bottom; /* Aligns bottom of columns/animation with the bottom wave */
   background-repeat: no-repeat;
   opacity: 0;
   visibility: hidden;
@@ -622,7 +622,7 @@ button {
   bottom: -2px;
   left: 0;
   width: 100%;
-  height: 60px;
+  height: 48px; /* Shorter wave depth matching original screenshot */
   overflow: hidden;
   z-index: 10;
 }
