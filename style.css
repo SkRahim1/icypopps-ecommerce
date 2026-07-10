@@ -390,7 +390,8 @@ button {
 .drawer {
   position: fixed;
   top: 0;
-  height: 100vh;
+  height: 100%;
+  height: 100dvh; /* Accounts for dynamic address bar size on mobile */
   width: 100%;
   max-width: 420px;
   background-color: var(--color-bg-white);
@@ -852,7 +853,8 @@ button {
 }
 
 .option-btn {
-  flex: 1;
+  flex: 1 1 0%;
+  width: 100%;
   border: 2px solid var(--color-border);
   color: var(--color-text);
   padding: 8px;
@@ -1893,6 +1895,8 @@ input:focus, textarea:focus, select:focus {
 }
 
 .quickview-info .option-btn {
+  flex: 1 1 0%;
+  width: 100%;
   border-color: var(--color-border);
   color: var(--color-text);
 }
@@ -2418,4 +2422,111 @@ hr {
 @keyframes colScrollDown {
   0% { transform: translateY(-50%); }
   100% { transform: translateY(0); }
+}
+
+/* Premium Slide Overlays */
+.slide-overlay-content {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-bg-white);
+  z-index: 15; /* Sits above standard images/columns */
+  width: 85%;
+  max-width: 580px;
+  background: rgba(31, 94, 74, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 24px 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-smooth);
+}
+
+.slide-overlay-content .slide-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.slide-overlay-content h2 {
+  font-family: var(--font-heading);
+  font-size: 2.3rem;
+  font-style: italic;
+  font-weight: 900;
+  margin-bottom: 12px;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.slide-overlay-content p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  opacity: 0.95;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.slide-overlay-content .primary-btn {
+  padding: 10px 24px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Responsive & Mobile specific styling overrides */
+@media (max-width: 768px) {
+  /* Disable stickiness on mobile so navigation is not obtrusive and frees up vertical screen space */
+  .sf-header.sticky-header {
+    position: relative !important;
+    box-shadow: none !important;
+  }
+  
+  /* Slide overlays sizing on mobile */
+  .slide-overlay-content {
+    width: 90%;
+    padding: 18px 20px;
+    top: 50%;
+  }
+  .slide-overlay-content h2 {
+    font-size: 1.6rem;
+  }
+  .slide-overlay-content p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  /* Mobile nav drawer logo larger size */
+  .drawer-header .brand-logo-img {
+    height: 48px !important; /* Make mobile drawer logo larger & prominent */
+  }
+
+  /* mobile drawer padding & layout spacing compression to prevent any bottom cut-offs */
+  .mobile-drawer-content {
+    padding: 15px 20px !important;
+    height: calc(100% - 60px);
+  }
+  
+  .mobile-nav-links {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  .mobile-drawer-account {
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+
+  .mobile-login-btn {
+    padding: 10px 16px !important;
+    font-size: 0.9rem !important;
+  }
 }
