@@ -583,7 +583,7 @@ button {
 
 .hero-slider-container {
   width: 100vw;
-  height: 420px; /* Reduced to 420px to ensure the waving bottom fits 100% inside any desktop viewport without scrolling */
+  height: 390px; /* Reduced to 390px to ensure the waving bottom fits 100% inside any desktop viewport without scrolling */
   position: relative;
   overflow: hidden;
   background-color: #f75b00;
@@ -616,7 +616,7 @@ button {
   z-index: 1;
 }
 
-/* Bottom Wave SVG Divider overlay with 2-second vertical up-down bobbing animation */
+/* Bottom Wave SVG Divider overlay */
 .wave-divider {
   position: absolute;
   bottom: -2px;
@@ -625,8 +625,6 @@ button {
   height: 48px; /* Precise wave overlay height */
   overflow: hidden;
   z-index: 10;
-  transform-origin: center bottom;
-  animation: waveUpDown 2s ease-in-out infinite alternate;
 }
 
 .wave-divider svg {
@@ -636,13 +634,16 @@ button {
   fill: var(--color-bg-white);
 }
 
+/* Animate the SVG path itself to avoid exposing orange background at the bottom container boundary */
 .wave-path {
   fill: var(--color-bg-white);
+  transform-origin: center bottom;
+  animation: waveUpDown 1.3s ease-in-out infinite alternate;
 }
 
 @keyframes waveUpDown {
   0% { transform: translateY(0); }
-  100% { transform: translateY(8px); } /* Smooth vertical up/down movement over 2 seconds */
+  100% { transform: translateY(-12px); } /* Bobs UPWARDS to cover the slide background, preventing flat line edge exposure */
 }
 
 /* Slider Pagination Indicators */
