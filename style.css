@@ -2403,6 +2403,15 @@ hr {
   height: 38px;
 }
 
+/* Override for text logo inside light drawers */
+.drawer-logo .brand-logo-text {
+  color: #1f1f1f !important;
+}
+
+.drawer-logo .brand-logo-tagline {
+  color: #555555 !important;
+}
+
 /* Slide 1: CSS Animated Columns (Mirrors original Icy Popps moving stripes columns style) */
 .hero-animated-columns {
   display: flex;
