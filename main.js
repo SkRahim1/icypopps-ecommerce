@@ -199,37 +199,18 @@ function stopSliderAutoplay() {
 function renderProducts() {
   if (!DOM.productsGrid) return;
   DOM.productsGrid.innerHTML = products.map(prod => {
-    const defaultOption = prod.options[0];
-    const isWishlisted = state.wishlist.includes(prod.id);
-    const wishIconFill = isWishlisted ? 'currentColor' : 'none';
-    
     return `
       <div class="product-card" data-id="${prod.id}">
-        <span class="card-badge">SALE</span>
+        <span class="card-badge">BULK</span>
         <div class="card-media">
-          <img src="${prod.images[0]}" alt="${prod.title}" class="prod-img-main" id="img-${prod.id}" />
-          <div class="media-hover-overlay">
-            <button class="wishlist-btn-toggle" data-id="${prod.id}" aria-label="Add to Wishlist">
-              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="${wishIconFill}"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-            </button>
-            <button class="quickview-trigger" data-id="${prod.id}" aria-label="Quick View">
-              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-            </button>
-          </div>
+          <img src="${prod.images[0]}" alt="${prod.title}" class="prod-img-main" id="img-${prod.id}" style="width:100%; height:100%; object-fit:contain;" />
         </div>
         <div class="card-info">
           <span class="category">${prod.category}</span>
           <h3>${prod.title}</h3>
-          <div class="price-row">
-            <span class="price" id="price-${prod.id}">Rs. ${defaultOption.price.toFixed(2)}</span>
-            <span class="regular" id="reg-price-${prod.id}">Rs. ${defaultOption.regularPrice.toFixed(2)}</span>
-          </div>
           <p class="desc">${prod.description}</p>
-          <div class="card-actions">
-            <select class="option-select" data-id="${prod.id}">
-              ${prod.options.map(opt => `<option value="${opt.name}">${opt.name}</option>`).join('')}
-            </select>
-            <button class="primary-btn quick-add-btn" data-id="${prod.id}">ADD</button>
+          <div class="card-actions" style="margin-top:auto; width:100%;">
+            <a href="franchisee.html?product=${encodeURIComponent(prod.title)}" class="primary-btn" style="text-align:center; width:100%; text-decoration:none; display:block; padding:12px 0; border-radius:0;">Enquiry Now</a>
           </div>
         </div>
       </div>
