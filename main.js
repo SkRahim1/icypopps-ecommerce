@@ -970,6 +970,50 @@ function bindEvents() {
       }, 4000);
     });
   }
+
+  // Subpage Contact Form Handler
+  const subpageContactForm = document.getElementById('subpage-contact-form');
+  const subpageContactSuccess = document.getElementById('contact-form-success');
+  const resetContactBtn = document.getElementById('reset-contact-btn');
+
+  if (subpageContactForm) {
+    subpageContactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      subpageContactForm.classList.add('hide');
+      if (subpageContactSuccess) subpageContactSuccess.classList.remove('hide');
+    });
+  }
+  if (resetContactBtn) {
+    resetContactBtn.addEventListener('click', () => {
+      if (subpageContactSuccess) subpageContactSuccess.classList.add('hide');
+      if (subpageContactForm) {
+        subpageContactForm.reset();
+        subpageContactForm.classList.remove('hide');
+      }
+    });
+  }
+
+  // Subpage Franchise Form Handler
+  const subpageFranchiseForm = document.getElementById('subpage-franchise-form');
+  const subpageFranchiseSuccess = document.getElementById('franchise-form-success');
+  const resetFranchiseBtn = document.getElementById('reset-franchise-btn');
+
+  if (subpageFranchiseForm) {
+    subpageFranchiseForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      subpageFranchiseForm.classList.add('hide');
+      if (subpageFranchiseSuccess) subpageFranchiseSuccess.classList.remove('hide');
+    });
+  }
+  if (resetFranchiseBtn) {
+    resetFranchiseBtn.addEventListener('click', () => {
+      if (subpageFranchiseSuccess) subpageFranchiseSuccess.classList.add('hide');
+      if (subpageFranchiseForm) {
+        subpageFranchiseForm.reset();
+        subpageFranchiseForm.classList.remove('hide');
+      }
+    });
+  }
 }
 
 // Drawer animation handlers
