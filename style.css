@@ -453,22 +453,13 @@ button {
   background-color: var(--color-bg-light);
 }
 
-/* Mobile Drawer Links */
+/* Mobile Drawer Links Reset */
 .mobile-nav-links {
   list-style: none;
 }
 
 .mobile-nav-links li a {
   display: block;
-  padding: 15px 0;
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.mobile-nav-links li a:hover {
-  color: var(--color-accent);
 }
 
 /* Cart & Wishlist Drawer Content */
@@ -2453,6 +2444,58 @@ hr {
 @keyframes colScrollDown {
   0% { transform: translateY(-50%); }
   100% { transform: translateY(0); }
+}
+
+/* Column Entrance Animations & White background backing */
+.hero-slide-item.hero-animated-slide {
+  background-color: #ffffff !important; /* Slide 1 background backing is pure white, not saffron */
+}
+
+.hero-slide-item.active .hero-col {
+  opacity: 0;
+}
+
+.hero-slide-item.active .animate-col-1 {
+  animation: slideInFromTop 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+  animation-delay: 0s;
+}
+.hero-slide-item.active .animate-col-2 {
+  animation: slideInFromBottom 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+  animation-delay: 0.15s;
+}
+.hero-slide-item.active .animate-col-3 {
+  animation: slideInFromTop 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+  animation-delay: 0.3s;
+}
+.hero-slide-item.active .animate-col-4 {
+  animation: slideInFromBottom 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+  animation-delay: 0.45s;
+}
+.hero-slide-item.active .animate-col-5 {
+  animation: slideInFromTop 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+  animation-delay: 0.6s;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Premium Slide Overlays */
