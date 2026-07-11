@@ -707,7 +707,7 @@ button {
   height: 100%;
   fill: var(--color-bg-white);
   transform: translate3d(0, 0, 0);
-  animation: waveSlide 2.5s linear infinite; /* Fast speed scrolling waves */
+  animation: waveSlide 5s linear infinite; /* Halved speed scrolling waves */
 }
 
 .wave-path {
@@ -2237,7 +2237,7 @@ hr {
 }
 
 .mobile-nav-item {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom: none; /* No border lines between menu items */
   opacity: 0;
   transform: translateX(-15px);
   animation: slideInMenu 0.4s ease forwards;
@@ -2256,67 +2256,43 @@ hr {
   }
 }
 
-.icon-text-wrap, .mobile-link-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-  color: var(--color-text);
-  transition: all 0.3s ease;
-}
-
-.mobile-link-item {
-  padding: 16px 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.nav-svg-icon {
-  color: var(--color-primary);
-  background-color: rgba(31, 94, 74, 0.08); /* Deep green light background circle */
-  padding: 7px;
-  border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-}
-
 /* Accordion toggle button styles */
 .accordion-toggle {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 16px 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-text);
+  padding: 20px 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1f1f1f;
   background: none;
   border: none;
   text-align: left;
   transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.accordion-toggle:hover, .mobile-link-item:hover {
+.mobile-nav-item a.mobile-link {
+  display: block;
+  padding: 20px 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1f1f1f;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.accordion-toggle:hover, .mobile-nav-item a.mobile-link:hover {
   color: var(--color-accent);
-}
-
-.accordion-toggle:hover .nav-svg-icon, .mobile-link-item:hover .nav-svg-icon {
-  background-color: var(--color-accent);
-  color: var(--color-bg-white);
-  transform: scale(1.08);
 }
 
 .accordion-toggle .chevron {
   transition: transform 0.3s ease;
   display: flex;
   align-items: center;
-  color: #000;
+  color: #1f1f1f;
   margin-right: 4px;
 }
 
@@ -2327,11 +2303,11 @@ hr {
 /* Accordion panel slide animation */
 .accordion-panel {
   list-style: none;
-  padding: 0 0 10px 48px; /* Offset text to match icons alignment */
+  padding: 0 0 10px 20px; /* Offset child links slightly */
   margin: 0;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1); /* smooth accordion feel */
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
 }
 
 .mobile-nav-item.active .accordion-panel {
@@ -2342,7 +2318,7 @@ hr {
 .accordion-panel li a {
   display: block;
   padding: 8px 0;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--color-text-muted);
   font-weight: 500;
   text-transform: none;
@@ -2357,10 +2333,17 @@ hr {
 /* Account panel fixed bottom styling */
 .mobile-drawer-account {
   margin-top: auto;
-  padding-top: 15px;
-  padding-bottom: 5px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  flex-shrink: 0; /* Never shrink or slide out of view */
+  padding: 20px 0 10px 0;
+  border-top: none; /* No border separator */
+  flex-shrink: 0;
+}
+
+.mobile-drawer-account h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 18px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .mobile-login-btn {
@@ -2368,24 +2351,23 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  border-radius: 8px !important;
-  padding: 12px 20px !important;
+  border-radius: 0px !important; /* Perfectly square/flat edges matching the screenshot */
+  padding: 15px 20px !important;
   font-weight: 700 !important;
-  font-size: 0.95rem !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)) !important;
+  font-size: 1.05rem !important;
+  text-transform: none !important; /* "Log in" mixed case */
+  background-color: #ff5b00 !important; /* Bright reddish orange color */
   color: white !important;
   border: none !important;
-  box-shadow: 0 4px 12px rgba(31, 94, 74, 0.2) !important;
-  transition: all 0.3s ease !important;
+  box-shadow: none !important; /* Flat design */
+  transition: opacity 0.3s ease !important;
 }
 
 .mobile-login-btn:hover {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-primary)) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 15px rgba(240, 90, 74, 0.3) !important;
+  background-color: #ff5b00 !important;
+  opacity: 0.9 !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 /* Premium Logo Image styling - Transparent backgrounds */
