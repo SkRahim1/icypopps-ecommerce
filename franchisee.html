@@ -17,16 +17,10 @@
   </head>
   <body id="sf-theme" class="template-franchisee relative min-h-screen">
     
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-      <div class="announcement-track">
-        <span>⚡ BECOME A BUBBLEBOX FRANCHISE PARTNER ⚡ DISTRICT DISTRIBUTORSHIPS OPEN FOR 2026 ⚡ HYGIENIC & SCALABLE STREET FOOD MODEL ⚡ JOIN INDIA'S PREMIUM PANIPURI NETWORK ⚡ APPLY NOW FOR EXCLUSIVE TERRITORY RIGHTS ⚡</span>
-        <span>⚡ BECOME A BUBBLEBOX FRANCHISE PARTNER ⚡ DISTRICT DISTRIBUTORSHIPS OPEN FOR 2026 ⚡ HYGIENIC & SCALABLE STREET FOOD MODEL ⚡ JOIN INDIA'S PREMIUM PANIPURI NETWORK ⚡ APPLY NOW FOR EXCLUSIVE TERRITORY RIGHTS ⚡</span>
-      </div>
-    </div>
-
     <!-- Header Navigation -->
     <header class="sf-header sticky-header">
+      <!-- Announcement Bar spacer joined with header background -->
+      <div class="announcement-bar"></div>
       <div class="header-container">
         <!-- Mobile Menu Toggle -->
         <button id="mobile-menu-toggle" aria-label="Toggle Menu" class="icon-btn mobile-only">
@@ -61,7 +55,13 @@
 
         <!-- Action Icons -->
         <div class="header-actions">
-          <a href="franchisee.html" class="primary-btn" style="text-decoration:none; padding:10px 20px; font-weight:700; border-radius:0; font-size:0.9rem;">APPLY NOW</a>
+          <button id="search-toggle" aria-label="Search" class="icon-btn">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          <button id="cart-toggle" aria-label="Cart" class="icon-btn">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            <span class="badge" id="cart-count">0</span>
+          </button>
         </div>
       </div>
     </header>

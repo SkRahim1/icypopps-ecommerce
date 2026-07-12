@@ -16,16 +16,10 @@
   </head>
   <body id="sf-theme" class="template-index relative min-h-screen">
     
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-      <div class="announcement-track">
-        <span>⚡ BECOME A BUBBLEBOX FRANCHISE PARTNER ⚡ DISTRICT DISTRIBUTORSHIPS OPEN FOR 2026 ⚡ HYGIENIC & SCALABLE STREET FOOD MODEL ⚡ JOIN INDIA'S PREMIUM PANIPURI NETWORK ⚡ APPLY NOW FOR EXCLUSIVE TERRITORY RIGHTS ⚡</span>
-        <span>⚡ BECOME A BUBBLEBOX FRANCHISE PARTNER ⚡ DISTRICT DISTRIBUTORSHIPS OPEN FOR 2026 ⚡ HYGIENIC & SCALABLE STREET FOOD MODEL ⚡ JOIN INDIA'S PREMIUM PANIPURI NETWORK ⚡ APPLY NOW FOR EXCLUSIVE TERRITORY RIGHTS ⚡</span>
-      </div>
-    </div>
-
     <!-- Header Navigation -->
     <header class="sf-header sticky-header">
+      <!-- Announcement Bar spacer joined with header background -->
+      <div class="announcement-bar"></div>
       <div class="header-container">
         <!-- Mobile Menu Toggle -->
         <button id="mobile-menu-toggle" aria-label="Toggle Menu" class="icon-btn mobile-only">
@@ -60,7 +54,13 @@
 
         <!-- Action Icons (Right) -->
         <div class="header-actions">
-          <a href="franchisee.html" class="primary-btn" style="text-decoration:none; padding:10px 20px; font-weight:700; border-radius:0; font-size:0.9rem;">APPLY NOW</a>
+          <button id="search-toggle" aria-label="Search" class="icon-btn">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          <button id="cart-toggle" aria-label="Cart" class="icon-btn">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            <span class="badge" id="cart-count">0</span>
+          </button>
         </div>
       </div>
     </header>
@@ -279,37 +279,79 @@
       </div>
     </section>
 
-    <!-- Interactive Flavours Showcase Section -->
+    <!-- Flavours Showcase Section (Rebuilt in Shopify Carousel Card layout matching screenshot) -->
     <section class="flavours-showcase-section" id="flavours-section">
-      <div class="section-header white-text">
-        <h2>Taste the bubblebox Twist</h2>
-        <p>Discover our 5 iconic flavors of Pani Puri, crafted for the perfect burst of creaminess and spice in every bite.</p>
+      <div class="section-header-wrap">
+        <div class="section-ornament ornament-left">🍊</div>
+        <div class="section-header">
+          <h2>Chillax With bubblebox</h2>
+          <p style="color: #555555; max-width: 600px; margin: 0 auto; font-family: 'EB Garamond', serif; font-size: 1.1rem; line-height: 1.5;">Discover our iconic flavors of Pani Puri, crafted for the perfect burst of herbs and spices in every bite.</p>
+        </div>
+        <div class="section-ornament ornament-right">🌿</div>
       </div>
 
-      <div class="flavours-interactive-container">
-        <!-- Left Column: 5 Flavor buttons -->
-        <div class="flavor-tabs-list" id="flavor-tabs">
-          <!-- Dynamically inserted buttons -->
-        </div>
+      <div class="flavor-cards-container">
+        <div class="flavor-cards-row">
+          <!-- Card 1: Classic Pudina -->
+          <div class="flavor-card-item" style="background-color: #d4f0e6;">
+            <div class="flavor-card-media-wrap">
+              <span class="card-decoration decor-1">🍃</span>
+              <img src="images/classic-pudina.jpg" alt="Classic Pudina" class="flavor-card-pack" />
+              <span class="card-decoration decor-2">🌱</span>
+              <span class="card-decoration decor-3">💧</span>
+            </div>
+            <a href="franchisee.html?product=Classic%20Pudina" class="flavor-card-label">Classic Pudina</a>
+          </div>
 
-        <!-- Center Display: Pop Illustration & Dynamic description -->
-        <div class="flavor-details-card" id="flavor-details-card">
-          <div class="flavor-card-background"></div>
-          <div class="flavor-card-content">
-            <div class="flavor-graphics">
-              <img id="flavor-pop-image" src="" alt="Pani Puri Illustration" />
+          <!-- Card 2: Cheese Blast -->
+          <div class="flavor-card-item" style="background-color: #ffeebb;">
+            <div class="flavor-card-media-wrap">
+              <span class="card-decoration decor-1">🧀</span>
+              <img src="images/cheese-blast.jpg" alt="Cheese Blast" class="flavor-card-pack" />
+              <span class="card-decoration decor-2">💛</span>
+              <span class="card-decoration decor-3">✨</span>
             </div>
-            <div class="flavor-info">
-              <h3 id="flavor-pop-name">Classic Pudina</h3>
-              <p class="flavor-tagline" id="flavor-pop-tagline">Refreshing mint water crafted with traditional herbs and authentic spices.</p>
-              <div class="flavor-highlights">
-                <span>🌱 100% Vegetarian Ingredients</span>
-                <span>🛡️ 100% Hygienic Preparation</span>
-              </div>
-              <a href="franchisee.html" class="primary-btn" style="text-decoration:none; text-align:center; display:inline-block;">ENQUIRE NOW</a>
+            <a href="franchisee.html?product=Cheese%20Blast" class="flavor-card-label">Cheese Blast</a>
+          </div>
+
+          <!-- Card 3: Fiery Chilli -->
+          <div class="flavor-card-item" style="background-color: #ffd3d3;">
+            <div class="flavor-card-media-wrap">
+              <span class="card-decoration decor-1">🌶️</span>
+              <img src="images/fiery-chilli.jpg" alt="Fiery Chilli" class="flavor-card-pack" />
+              <span class="card-decoration decor-2">🔥</span>
+              <span class="card-decoration decor-3">❤️</span>
             </div>
+            <a href="franchisee.html?product=Fiery%20Chilli" class="flavor-card-label">Fiery Chilli</a>
+          </div>
+
+          <!-- Card 4: Meetha Masti -->
+          <div class="flavor-card-item" style="background-color: #f5ebd5;">
+            <div class="flavor-card-media-wrap">
+              <span class="card-decoration decor-1">🍯</span>
+              <img src="images/meetha-masti.jpg" alt="Meetha Masti" class="flavor-card-pack" />
+              <span class="card-decoration decor-2">✨</span>
+              <span class="card-decoration decor-3">⭐</span>
+            </div>
+            <a href="franchisee.html?product=Meetha%20Masti" class="flavor-card-label">Meetha Masti</a>
+          </div>
+
+          <!-- Card 5: Imli Chatpata -->
+          <div class="flavor-card-item" style="background-color: #e8dcd0;">
+            <div class="flavor-card-media-wrap">
+              <span class="card-decoration decor-1">🍁</span>
+              <img src="images/classic-pudina.jpg" alt="Imli Chatpata" class="flavor-card-pack" />
+              <span class="card-decoration decor-2">🧂</span>
+              <span class="card-decoration decor-3">🍋</span>
+            </div>
+            <a href="franchisee.html?product=Imli%20Chatpata" class="flavor-card-label">Imli Chatpata</a>
           </div>
         </div>
+      </div>
+
+      <div class="bottom-happy-banner">
+        <h2>bubblebox THAT MAKES YOU 'HAPPY'</h2>
+        <span class="ornament-bottom-right">🍓</span>
       </div>
     </section>
 

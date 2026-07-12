@@ -199,18 +199,26 @@ function stopSliderAutoplay() {
 function renderProducts() {
   if (!DOM.productsGrid) return;
   DOM.productsGrid.innerHTML = products.map(prod => {
+    let displayTitle = prod.title.toUpperCase();
+    if (displayTitle.length > 20) {
+      displayTitle = displayTitle.substring(0, 18) + '...';
+    }
+    const defaultOption = prod.options[0];
+    const priceText = `From Rs. ${defaultOption.price.toFixed(2)}`;
+
     return `
       <div class="product-card" data-id="${prod.id}">
-        <span class="card-badge">BULK</span>
         <div class="card-media">
-          <img src="${prod.images[0]}" alt="${prod.title}" class="prod-img-main" id="img-${prod.id}" style="width:100%; height:100%; object-fit:contain;" />
+          <img src="${prod.images[0]}" alt="${prod.title}" class="prod-img-main" id="img-${prod.id}" />
         </div>
         <div class="card-info">
-          <span class="category">${prod.category}</span>
-          <h3>${prod.title}</h3>
-          <p class="desc">${prod.description}</p>
-          <div class="card-actions" style="margin-top:auto; width:100%;">
-            <a href="franchisee.html?product=${encodeURIComponent(prod.title)}" class="primary-btn" style="text-align:center; width:100%; text-decoration:none; display:block; padding:12px 0; border-radius:0;">Enquiry Now</a>
+          <span class="category" style="color: #888888; font-size: 0.72rem; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 4px;">BUBBLEBOX</span>
+          <h3 style="font-family: 'EB Garamond', serif; font-style: normal; font-size: 0.95rem; font-weight: 800; text-transform: uppercase; color: #000000; margin: 0 0 6px 0; letter-spacing: 0.02em; line-height: 1.3;">${displayTitle}</h3>
+          <div class="price-row" style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+            <span class="price" style="color: #ff5c00; font-weight: 700; font-size: 1.05rem; font-family: 'EB Garamond', serif;">${priceText}</span>
+          </div>
+          <div class="card-actions" style="margin-top: auto; width: 100%;">
+            <a href="franchisee.html?product=${encodeURIComponent(prod.title)}" class="primary-btn select-options-btn" style="text-align: center; width: 100%; text-decoration: none; display: block; padding: 11px 0; border: 1px solid #222222; background-color: #ffffff; color: #222222; font-weight: 700; font-size: 0.9rem; border-radius: 0; text-transform: none; transition: all 0.2s ease;">Select options</a>
           </div>
         </div>
       </div>

@@ -43,21 +43,21 @@ h1, h2, h3, h4, h5, h6 {
 .brand-logo-text {
   font-family: 'EB Garamond', serif;
   font-weight: 900;
-  font-size: 1.7rem;
-  letter-spacing: -0.04em;
-  color: #ffffff;
+  font-size: 1.85rem;
+  letter-spacing: -0.03em;
+  color: #ffffff !important; /* Entire logo text in white */
 }
 
 .brand-logo-text .logo-accent {
-  color: var(--color-accent);
+  color: #ffffff !important; /* "box" also in white */
 }
 
 .brand-logo-tagline {
   font-family: 'EB Garamond', serif;
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #ffffff;
+  color: #ffffff !important; /* Tagline also in white */
   margin-top: 1px;
 }
 
@@ -194,17 +194,12 @@ button {
   justify-content: center;
 }
 
-/* Announcement Bar */
 .announcement-bar {
-  background-color: var(--color-primary);
-  color: var(--color-bg-white);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  padding: 8px 0;
+  background-color: #ff5c00; /* Same orange color as navbar */
+  height: 8px; /* Small clean height spacer */
+  padding: 0;
   overflow: hidden;
   position: relative;
-  white-space: nowrap;
   z-index: 1000;
 }
 
@@ -225,7 +220,7 @@ button {
 
 /* Header Navigation - Premium Float with Glassmorphism */
 .sf-header {
-  background: rgba(31, 94, 74, 0.95); /* Deep green with transparency */
+  background: #ff5c00; /* Bright orange matching the screenshot */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -1008,20 +1003,22 @@ section {
 }
 
 .product-card {
-  background-color: var(--color-bg-white);
-  border-radius: 8px;
+  background-color: #ffffff;
+  border-radius: 0px;
   overflow: hidden;
-  box-shadow: var(--shadow-premium);
-  border: 1px solid var(--color-border);
+  box-shadow: none;
+  border: 1px solid #e8e8e8;
   transition: var(--transition-smooth);
   display: flex;
   flex-direction: column;
   position: relative;
+  padding: 12px;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-color: #d8d8d8;
 }
 
 .card-badge {
@@ -1029,18 +1026,18 @@ section {
   top: 15px;
   left: 15px;
   background-color: var(--color-accent);
-  color: var(--color-bg-white);
+  color: #ffffff;
   padding: 4px 10px;
   font-size: 0.75rem;
   font-weight: 700;
-  border-radius: 4px;
+  border-radius: 0px;
   z-index: 10;
 }
 
 .card-media {
   position: relative;
   overflow: hidden;
-  background-color: var(--color-bg-light);
+  background-color: #ffffff;
   aspect-ratio: 1;
   display: flex;
   align-items: center;
@@ -1163,132 +1160,178 @@ section {
   font-size: 0.85rem;
 }
 
-/* Interactive Flavours Showcase */
+/* Interactive Flavours Showcase (New Shopify Style Carousel matching image) */
 .flavours-showcase-section {
-  background: linear-gradient(135deg, #c2000a 0%, #ff000d 100%);
+  background-color: #ffffff; /* White background matching screenshot */
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.flavours-interactive-container {
+.flavours-showcase-section .section-header h2 {
+  font-family: 'EB Garamond', serif;
+  font-weight: 800;
+  font-size: 2.6rem;
+  color: #000000;
+  font-style: normal;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto 10px auto;
+}
+
+.section-header-wrap {
+  text-align: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.section-ornament {
+  position: absolute;
+  font-size: 2rem;
+  user-select: none;
+  pointer-events: none;
+  animation: float-decor 3s ease-in-out infinite alternate;
+}
+
+.ornament-left {
+  top: -15px;
+  left: calc(50% - 240px);
+}
+
+.ornament-right {
+  top: -15px;
+  right: calc(50% - 240px);
+  animation-delay: 1.5s;
+}
+
+@keyframes float-decor {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-8px) rotate(8deg); }
+}
+
+.flavor-cards-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 50px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.flavor-cards-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.flavor-cards-row {
+  display: flex;
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.flavor-card-item {
+  flex: 0 0 310px;
+  height: 400px;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.flavor-card-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.flavor-card-media-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.flavor-tabs-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.flavor-card-pack {
+  width: 65%;
+  height: 65%;
+  object-fit: contain;
+  transform: rotate(-12deg);
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.18));
+}
+
+.flavor-card-item:hover .flavor-card-pack {
+  transform: rotate(-18deg) scale(1.05);
+}
+
+.card-decoration {
+  position: absolute;
+  font-size: 2.2rem;
+  opacity: 0.85;
+  pointer-events: none;
+  animation: float-decor-decor 2s ease-in-out infinite alternate;
+}
+
+@keyframes float-decor-decor {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-10px) scale(1.05); }
+}
+
+.decor-1 { top: 20%; left: 15%; animation-delay: 0.3s; }
+.decor-2 { top: 60%; right: 15%; animation-delay: 0.8s; }
+.decor-3 { bottom: 15%; left: 25%; animation-delay: 1.2s; }
+.decor-4 { top: 15%; right: 25%; animation-delay: 0.1s; }
+
+.flavor-card-label {
+  position: absolute;
+  bottom: 24px;
+  background-color: #ffffff;
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-family: 'EB Garamond', serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #222222;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+
+.flavor-card-item:hover .flavor-card-label {
+  background-color: #222222;
+  color: #ffffff;
+}
+
+.bottom-happy-banner {
+  text-align: center;
+  margin-top: 60px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 15px;
 }
 
-.flavor-tab {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: var(--color-bg-white);
-  padding: 15px 20px;
-  border-radius: 8px;
-  text-align: left;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  backdrop-filter: blur(5px);
-}
-
-.flavor-tab::before {
-  content: '';
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: var(--color-bg-white);
-  opacity: 0.5;
-}
-
-.flavor-tab:hover, .flavor-tab.active {
-  background-color: var(--color-bg-white);
-  color: var(--color-text);
-  box-shadow: var(--shadow-premium);
-  transform: translateX(5px);
-}
-
-.flavor-tab.active::before {
-  background-color: var(--color-accent);
-  opacity: 1;
-}
-
-.flavor-details-card {
-  position: relative;
-  background-color: var(--color-bg-white);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-  min-height: 400px;
-  display: flex;
-}
-
-.flavor-card-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.15;
-  transition: var(--transition-smooth);
-}
-
-.flavor-card-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  padding: 40px;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-  width: 100%;
-}
-
-.flavor-graphics {
-  display: flex;
-  justify-content: center;
-}
-
-.flavor-graphics img {
-  max-height: 320px;
-  object-fit: contain;
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.flavor-details-card:hover .flavor-graphics img {
-  transform: rotate(-10deg) scale(1.1);
-}
-
-.flavor-info h3 {
-  font-size: 2.2rem;
+.bottom-happy-banner h2 {
+  font-family: 'Montserrat', sans-serif !important; /* Playful sans-serif as in image */
   font-weight: 900;
+  font-size: 2.2rem;
+  letter-spacing: -0.01em;
+  color: #ff9a3d; /* Saffron color matching screenshot */
   text-transform: uppercase;
-  margin-bottom: 15px;
-  color: var(--color-text);
+  margin: 0;
 }
 
-.flavor-tagline {
-  font-size: 1rem;
-  color: var(--color-text-muted);
-  margin-bottom: 25px;
-}
-
-.flavor-highlights {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 30px;
-  font-weight: 700;
-  font-size: 0.9rem;
+.ornament-bottom-right {
+  font-size: 2.5rem;
+  animation: float-decor 3s ease-in-out infinite alternate;
 }
 
 /* Brand Story / About */
@@ -2404,12 +2447,22 @@ hr {
 }
 
 /* Override for text logo inside light drawers */
+.drawer-logo {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
 .drawer-logo .brand-logo-text {
-  color: #1f1f1f !important;
+  color: #1F5E4A !important;
+}
+
+.drawer-logo .brand-logo-text .logo-accent {
+  color: #FF9A3D !important; /* Keep box saffron inside mobile drawer */
 }
 
 .drawer-logo .brand-logo-tagline {
-  color: #555555 !important;
+  color: #1F5E4A !important;
 }
 
 /* Slide 1: CSS Animated Columns (Mirrors original Icy Popps moving stripes columns style) */
@@ -3261,5 +3314,32 @@ hr {
   }
   .about-text-content h2, .contact-info-col h2, .section-title h2, .form-title h2 {
     font-size: 1.85rem;
+  }
+}
+
+.select-options-btn:hover {
+  background-color: #222222 !important;
+  color: #ffffff !important;
+  border-color: #222222 !important;
+}
+
+@media (max-width: 576px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    padding: 0 10px !important;
+  }
+  .product-card {
+    padding: 10px !important;
+  }
+  .card-info {
+    padding: 12px 5px 5px 5px !important;
+  }
+  .card-info h3 {
+    font-size: 0.9rem !important;
+  }
+  .select-options-btn {
+    padding: 8px 0 !important;
+    font-size: 0.8rem !important;
   }
 }
