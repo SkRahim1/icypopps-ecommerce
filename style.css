@@ -2846,10 +2846,12 @@ hr {
 }
 
 .banner-wave svg {
-  width: 100%;
+  display: block;
+  width: 200%; /* Wider canvas for horizontal sliding animation */
   height: 100%;
   fill: var(--color-bg-white); /* Blends into subpage background */
-  display: block;
+  transform: translate3d(0, 0, 0);
+  animation: waveSlide 5s linear infinite; /* Halved speed scrolling waves */
 }
 
 /* About subpage custom styles */
