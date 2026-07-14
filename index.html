@@ -349,24 +349,35 @@
         </div>
       </div>
 
+    <!-- About Us Title Above the Wavy Ribbon -->
+    <div class="about-us-header-wrap" style="text-align: center; margin-top: 70px; margin-bottom: 25px; z-index: 11; position: relative;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 900; color: #000000; margin-bottom: 5px; text-transform: none;">About Us</h2>
+      <!-- Wavy orange underline SVG matching first image -->
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <svg width="80" height="12" viewBox="0 0 80 12" fill="none">
+          <path d="M0,6 Q10,0 20,6 T40,6 T60,6 T80,6" stroke="#ff9a3d" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
     <!-- Wavy Marquee Banner (Rebuilt with true curved SVG textPath matching official icypopps design) -->
-    <div class="wavy-marquee-svg-container" style="position: relative; width: 100%; overflow: hidden; background-color: #ffffff; padding: 40px 0; z-index: 10; margin-bottom: -20px; margin-top: 10px;">
-      <svg viewBox="0 0 1440 200" preserveAspectRatio="none" style="width: 100%; height: auto; display: block;">
+    <div class="wavy-marquee-svg-container" style="position: relative; width: 100%; overflow: hidden; background-color: #ffffff; padding: 20px 0; z-index: 10; margin-bottom: 30px; margin-top: -10px;">
+      <svg viewBox="0 0 1440 220" style="width: 100%; height: auto; display: block;">
         <defs>
-          <!-- The sine wave path for scrolling text -->
-          <path id="text-wave-path" d="M -200 100 C 150 -10, 350 210, 720 100 C 1090 -10, 1290 210, 1660 100 C 2030 -10, 2230 210, 2600 100" fill="none" />
-          <!-- The thick saffron wave background stroke -->
-          <path id="bg-wave-path" d="M -200 100 C 150 -10, 350 210, 720 100 C 1090 -10, 1290 210, 1660 100 C 2030 -10, 2230 210, 2600 100" fill="none" stroke="#ff9a3d" stroke-width="85" stroke-linecap="round" />
+          <!-- A steeper sine wave path for a more pronounced curves (up, down, up, down) -->
+          <path id="text-wave-path" d="M -200 110 C 120 10, 320 210, 680 110 C 1040 10, 1240 210, 1600 110 C 1960 10, 2160 210, 2520 110 C 2880 10, 3080 210, 3440 110" fill="none" />
+          <!-- Saffron background stroke line -->
+          <path id="bg-wave-path" d="M -200 110 C 120 10, 320 210, 680 110 C 1040 10, 1240 210, 1600 110 C 1960 10, 2160 210, 2520 110 C 2880 10, 3080 210, 3440 110" fill="none" stroke="#ff9a3d" stroke-width="95" stroke-linecap="round" />
         </defs>
         
         <!-- Draw the saffron background ribbon -->
         <use href="#bg-wave-path" />
         
         <!-- Draw the text following the wave contour -->
-        <text font-family="'Outfit', sans-serif" font-size="24" font-weight="900" fill="#ffffff" dy="8" letter-spacing="2">
+        <text font-family="'Outfit', sans-serif" font-size="25" font-weight="900" fill="#ffffff" dy="9" letter-spacing="1">
           <textPath href="#text-wave-path" startOffset="0%">
-            THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK
-            <animate attributeName="startOffset" from="0%" to="-50%" dur="14s" repeatCount="indefinite" />
+            THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK
+            <animate attributeName="startOffset" from="0%" to="-50%" dur="15s" repeatCount="indefinite" />
           </textPath>
         </text>
       </svg>
