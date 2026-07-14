@@ -349,18 +349,27 @@
         </div>
       </div>
 
-    <!-- Wavy Marquee Banner -->
-    <div class="wavy-marquee-banner">
-      <div class="wave-top">
-        <svg viewBox="0 0 2400 120" preserveAspectRatio="none" style="width: 200%; height: 100%;"><path d="M 0 30 Q 100 80 200 30 T 400 30 T 600 30 T 800 30 T 1000 30 T 1200 30 T 1400 30 T 1600 30 T 1800 30 T 2000 30 T 2200 30 T 2400 30 V 120 H 0 Z" fill="#ff9a3d"></path></svg>
-      </div>
-      <div class="marquee-track">
-        <div class="marquee-text">THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp;</div>
-        <div class="marquee-text">THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp; THE OG STREET SNACK &nbsp;•&nbsp;</div>
-      </div>
-      <div class="wave-bottom">
-        <svg viewBox="0 0 2400 120" preserveAspectRatio="none" style="width: 200%; height: 100%;"><path d="M 0 30 Q 100 80 200 30 T 400 30 T 600 30 T 800 30 T 1000 30 T 1200 30 T 1400 30 T 1600 30 T 1800 30 T 2000 30 T 2200 30 T 2400 30 V 120 H 0 Z" fill="#ffffff"></path></svg>
-      </div>
+    <!-- Wavy Marquee Banner (Rebuilt with true curved SVG textPath matching official icypopps design) -->
+    <div class="wavy-marquee-svg-container" style="position: relative; width: 100%; overflow: hidden; background-color: #ffffff; padding: 40px 0; z-index: 10; margin-bottom: -20px; margin-top: 10px;">
+      <svg viewBox="0 0 1440 200" preserveAspectRatio="none" style="width: 100%; height: auto; display: block;">
+        <defs>
+          <!-- The sine wave path for scrolling text -->
+          <path id="text-wave-path" d="M -200 100 C 150 -10, 350 210, 720 100 C 1090 -10, 1290 210, 1660 100 C 2030 -10, 2230 210, 2600 100" fill="none" />
+          <!-- The thick saffron wave background stroke -->
+          <path id="bg-wave-path" d="M -200 100 C 150 -10, 350 210, 720 100 C 1090 -10, 1290 210, 1660 100 C 2030 -10, 2230 210, 2600 100" fill="none" stroke="#ff9a3d" stroke-width="85" stroke-linecap="round" />
+        </defs>
+        
+        <!-- Draw the saffron background ribbon -->
+        <use href="#bg-wave-path" />
+        
+        <!-- Draw the text following the wave contour -->
+        <text font-family="'Outfit', sans-serif" font-size="24" font-weight="900" fill="#ffffff" dy="8" letter-spacing="2">
+          <textPath href="#text-wave-path" startOffset="0%">
+            THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK • THE OG STREET SNACK
+            <animate attributeName="startOffset" from="0%" to="-50%" dur="14s" repeatCount="indefinite" />
+          </textPath>
+        </text>
+      </svg>
     </div>
 
     <!-- About Section: bubblebox That Makes You Happy -->
