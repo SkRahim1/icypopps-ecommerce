@@ -6,7 +6,8 @@ export const products = [
     description: "Enriched with Vitamin C, 100% RO-purified water, gluten-free, and produced in a no-touch facility.",
     details: "Made using authentic fruit extracts and clean RO-filtered water. A nostalgic 90s treat in a healthier, cleaner, and cooler avatar.",
     options: [
-      { name: "Box of 10 Pops", price: 480.00, regularPrice: 599.00 }
+      { name: "Pack of 24", price: 480.00, regularPrice: 599.00 },
+      { name: "Pack of 36", price: 720.00, regularPrice: 899.00 }
     ],
     images: [
       "images/classic-pudina.jpg"
@@ -20,7 +21,8 @@ export const products = [
     description: "Enriched with Vitamin C, 100% RO-purified water, gluten-free, and produced in a no-touch facility.",
     details: "Authentic tangy tamarind blend. Satisfy your childhood street cravings safely and hygienically.",
     options: [
-      { name: "Box of 10 Pops", price: 480.00, regularPrice: 599.00 }
+      { name: "Pack of 24", price: 480.00, regularPrice: 599.00 },
+      { name: "Pack of 36", price: 720.00, regularPrice: 899.00 }
     ],
     images: [
       "images/meetha-masti.jpg"
@@ -34,7 +36,8 @@ export const products = [
     description: "Enriched with Vitamin C, 100% RO-purified water, gluten-free, and produced in a no-touch facility.",
     details: "Tangy rose syrup blend that refreshes the soul with natural extracts and premium cooling ingredients.",
     options: [
-      { name: "Box of 10 Pops", price: 480.00, regularPrice: 599.00 }
+      { name: "Pack of 24", price: 480.00, regularPrice: 599.00 },
+      { name: "Pack of 36", price: 720.00, regularPrice: 899.00 }
     ],
     images: [
       "images/fiery-chilli.jpg"
@@ -48,7 +51,8 @@ export const products = [
     description: "Enriched with Vitamin C, 100% RO-purified water, gluten-free, and produced in a no-touch facility.",
     details: "The classic tangy cumin and black grape flavor that takes you straight back to the nostalgic 90s childhood.",
     options: [
-      { name: "Box of 10 Pops", price: 480.00, regularPrice: 599.00 }
+      { name: "Pack of 24", price: 480.00, regularPrice: 599.00 },
+      { name: "Pack of 36", price: 720.00, regularPrice: 899.00 }
     ],
     images: [
       "images/brand-showcase.jpg"
@@ -62,7 +66,8 @@ export const products = [
     description: "Enriched with Vitamin C, 100% RO-purified water, gluten-free, and produced in a no-touch facility.",
     details: "Tangy raw mango syrup mixed with standard ground salt and cumin spices for a mouth-watering punch.",
     options: [
-      { name: "Box of 10 Pops", price: 480.00, regularPrice: 599.00 }
+      { name: "Pack of 24", price: 480.00, regularPrice: 599.00 },
+      { name: "Pack of 36", price: 720.00, regularPrice: 899.00 }
     ],
     images: [
       "images/cheese-blast.jpg"

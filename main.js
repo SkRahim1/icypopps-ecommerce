@@ -218,7 +218,7 @@ function renderProducts() {
             <span class="price" style="color: #ff5c00; font-weight: 700; font-size: 1.05rem; font-family: 'EB Garamond', serif;">${priceText}</span>
           </div>
           <div class="card-actions" style="margin-top: auto; width: 100%;">
-            <a href="franchisee.html?product=${encodeURIComponent(prod.title)}" class="primary-btn select-options-btn" style="text-align: center; width: 100%; text-decoration: none; display: block; padding: 11px 0; border: 1px solid #222222; background-color: #ffffff; color: #222222; font-weight: 700; font-size: 0.9rem; border-radius: 0; text-transform: none; transition: all 0.2s ease;">Select options</a>
+            <button class="primary-btn select-options-btn quickview-trigger" data-id="${prod.id}" style="text-align: center; width: 100%; border: 1px solid #222222; background-color: #ffffff; color: #222222; font-weight: 700; font-size: 0.9rem; border-radius: 0; text-transform: none; transition: all 0.2s ease; cursor: pointer; padding: 11px 0;">Select options</button>
           </div>
         </div>
       </div>
@@ -444,36 +444,37 @@ function openQuickview(productId) {
   const defaultOption = prod.options[0];
 
   DOM.quickviewContent.innerHTML = `
-    <div class="quickview-media">
-      <img src="${prod.images[0]}" alt="${prod.title}" class="main-img" id="qv-main-img" />
-      <div class="quickview-thumbs">
-        ${prod.images.map((img, idx) => `<img src="${img}" class="qv-thumb ${idx === 0 ? 'active' : ''}" alt="Thumb ${idx}" />`).join('')}
+    <div class="quickview-media" style="background-color: #ffffff; padding: 20px; border-radius: 8px;">
+      <img src="${prod.images[0]}" alt="${prod.title}" class="main-img" id="qv-main-img" style="max-height: 380px; object-fit: contain; width: 100%; display: block; margin: 0 auto;" />
+      <div class="quickview-thumbs" style="display: flex; gap: 8px; justify-content: center; margin-top: 15px;">
+        ${prod.images.map((img, idx) => `<img src="${img}" class="qv-thumb ${idx === 0 ? 'active' : ''}" alt="Thumb ${idx}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px; border: 1px solid #d0d0d0; cursor: pointer; transition: opacity 0.2s ease;" />`).join('')}
       </div>
     </div>
     <div class="quickview-info" data-product-id="${prod.id}">
-      <span class="category">${prod.category}</span>
-      <h2>${prod.title}</h2>
-      <div class="price-row">
-        <span class="price" id="qv-price">Rs. ${defaultOption.price.toFixed(2)}</span>
-        <span class="regular" id="qv-reg-price">Rs. ${defaultOption.regularPrice.toFixed(2)}</span>
+      <span class="category" style="color: #888888; font-size: 0.72rem; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 4px; display: block; text-transform: uppercase;">BUBBLEBOX</span>
+      <h2 style="font-family: 'EB Garamond', serif; font-size: 1.8rem; font-weight: 800; color: #000000; margin-bottom: 12px; line-height: 1.25;">${prod.title}</h2>
+      <div class="price-row" style="margin-bottom: 20px; display: flex; align-items: baseline; gap: 10px;">
+        <span class="price" id="qv-price" style="color: #ff5c00; font-weight: 700; font-size: 1.6rem; font-family: 'EB Garamond', serif;">Rs. ${defaultOption.price.toFixed(2)}</span>
       </div>
-      <p class="desc">${prod.description}</p>
       
-      <ul class="details-bullets">
-        ${prod.features ? prod.features.map(f => `<li>✓ ${f}</li>`).join('') : `<li>✓ Enriched with Vitamin C</li><li>✓ Made with 100% RO Water</li>`}
-      </ul>
-
-      <div class="option-selectors">
-        ${prod.options.map((opt, idx) => `<button class="option-btn qv-option-btn ${idx === 0 ? 'active' : ''}" data-value="${opt.name}">${opt.name}</button>`).join('')}
+      <div class="option-selectors-wrap" style="margin-bottom: 20px;">
+        <div class="option-label" style="font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; color: #222222; font-family: sans-serif;">Select: <span id="qv-selected-option-label" style="font-weight: 500;">${defaultOption.name}</span></div>
+        <div class="option-selectors" style="display: flex; gap: 10px;">
+          ${prod.options.map((opt, idx) => `<button class="option-btn qv-option-btn ${idx === 0 ? 'active' : ''}" data-value="${opt.name}" style="flex: 1; border: 1px solid ${idx === 0 ? '#000000' : '#e0e0e0'}; background-color: ${idx === 0 ? '#000000' : '#ffffff'}; color: ${idx === 0 ? '#ffffff' : '#222222'}; padding: 10px 15px; font-size: 0.95rem; font-weight: 600; border-radius: 4px; cursor: pointer; transition: all 0.2s ease;">${opt.name}</button>`).join('')}
+        </div>
       </div>
 
-      <div class="purchase-actions">
-        <div class="quantity-stepper">
-          <button class="qv-qty-dec">-</button>
-          <input type="number" value="1" min="1" class="qv-qty-input" readonly />
-          <button class="qv-qty-inc">+</button>
+      <div class="qty-row" style="display: flex; align-items: center; margin-top: 15px; margin-bottom: 25px; gap: 20px;">
+        <span style="font-size: 0.95rem; font-weight: 700; color: #222222; font-family: sans-serif;">Quantity</span>
+        <div class="quantity-stepper" style="display: flex; align-items: center; border: 1px solid #d0d0d0; border-radius: 4px; overflow: hidden; background-color: #ffffff; width: 140px; height: 42px;">
+          <button class="qv-qty-dec" style="flex: 1; border: none; background: none; font-size: 1.2rem; cursor: pointer; color: #555555; height: 100%; display: flex; align-items: center; justify-content: center;">-</button>
+          <input type="number" value="1" min="1" class="qv-qty-input" readonly style="width: 50px; text-align: center; border: none; font-weight: 600; font-size: 1rem; color: #222222; background: none; outline: none; height: 100%; display: flex; align-items: center; justify-content: center;" />
+          <button class="qv-qty-inc" style="flex: 1; border: none; background: none; font-size: 1.2rem; cursor: pointer; color: #555555; height: 100%; display: flex; align-items: center; justify-content: center;">+</button>
         </div>
-        <button class="primary-btn qv-add-to-cart">ADD TO CART</button>
+      </div>
+
+      <div class="purchase-actions" style="margin-top: 20px;">
+        <a id="qv-inquire-btn" href="franchisee.html?product=${encodeURIComponent(prod.title)}&option=${encodeURIComponent(defaultOption.name)}&qty=1" class="primary-btn qv-inquire-btn" style="text-align: center; text-decoration: none; display: block; width: 100%; background-color: var(--color-accent); color: #ffffff; padding: 14px 0; font-weight: 700; border-radius: 4px; font-size: 1.05rem; letter-spacing: 0.05em; text-transform: uppercase; border: none; transition: opacity 0.2s ease;">Inquire Now</a>
       </div>
     </div>
   `;
@@ -490,18 +491,38 @@ function openQuickview(productId) {
   });
 
   const qvOptionBtns = document.querySelectorAll('.qv-option-btn');
+  const qvSelectedOptionLabel = document.getElementById('qv-selected-option-label');
+  const qvInquireBtn = document.getElementById('qv-inquire-btn');
+  
+  const updateInquireHref = (optionName, qty) => {
+    qvInquireBtn.href = `franchisee.html?product=${encodeURIComponent(prod.title)}&option=${encodeURIComponent(optionName)}&qty=${qty}`;
+  };
+
   qvOptionBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      qvOptionBtns.forEach(b => b.classList.remove('active'));
+      qvOptionBtns.forEach(b => {
+        b.classList.remove('active');
+        b.style.backgroundColor = '#ffffff';
+        b.style.color = '#222222';
+        b.style.borderColor = '#e0e0e0';
+      });
       btn.classList.add('active');
+      btn.style.backgroundColor = '#000000';
+      btn.style.color = '#ffffff';
+      btn.style.borderColor = '#000000';
+      
+      const optName = btn.dataset.value;
+      if (qvSelectedOptionLabel) qvSelectedOptionLabel.textContent = optName;
       
       // Update Price display based on option selection
-      const optName = btn.dataset.value;
       const optDetails = prod.options.find(o => o.name === optName);
       if (optDetails) {
         document.getElementById('qv-price').textContent = `Rs. ${optDetails.price.toFixed(2)}`;
-        document.getElementById('qv-reg-price').textContent = `Rs. ${optDetails.regularPrice.toFixed(2)}`;
       }
+      
+      const qvQtyInput = document.querySelector('.qv-qty-input');
+      const qty = qvQtyInput ? parseInt(qvQtyInput.value) : 1;
+      updateInquireHref(optName, qty);
     });
   });
 
@@ -509,21 +530,19 @@ function openQuickview(productId) {
   const qvQtyInput = document.querySelector('.qv-qty-input');
   document.querySelector('.qv-qty-dec').addEventListener('click', () => {
     let val = parseInt(qvQtyInput.value);
-    if (val > 1) qvQtyInput.value = val - 1;
+    if (val > 1) {
+      qvQtyInput.value = val - 1;
+      const activeOptBtn = document.querySelector('.qv-option-btn.active');
+      const selectedOption = activeOptBtn ? activeOptBtn.dataset.value : prod.options[0].name;
+      updateInquireHref(selectedOption, val - 1);
+    }
   });
   document.querySelector('.qv-qty-inc').addEventListener('click', () => {
     let val = parseInt(qvQtyInput.value);
     qvQtyInput.value = val + 1;
-  });
-
-  // Quickview Add to Cart button
-  document.querySelector('.qv-add-to-cart').addEventListener('click', () => {
     const activeOptBtn = document.querySelector('.qv-option-btn.active');
     const selectedOption = activeOptBtn ? activeOptBtn.dataset.value : prod.options[0].name;
-    const qty = parseInt(qvQtyInput.value);
-    
-    addToCart(prod.id, selectedOption, qty);
-    closeModal(DOM.quickviewModal);
+    updateInquireHref(selectedOption, val + 1);
   });
 
   openModal(DOM.quickviewModal);
@@ -988,6 +1007,27 @@ function bindEvents() {
   const resetFranchiseBtn = document.getElementById('reset-franchise-btn');
 
   if (subpageFranchiseForm) {
+    // Parse URL Search Parameters for prefilling product inquiry details
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramProduct = urlParams.get('product');
+    const paramOption = urlParams.get('option');
+    const paramQty = urlParams.get('qty');
+    
+    if (paramProduct) {
+      const infoBox = document.getElementById('selected-product-info-box');
+      const infoText = document.getElementById('selected-product-text');
+      if (infoBox && infoText) {
+        infoBox.classList.remove('hide');
+        infoText.textContent = `${paramProduct} (${paramOption || 'Pack of 24'}) — Quantity: ${paramQty || '1'}`;
+        
+        // Auto-prefill the message details text field too!
+        const msgField = document.getElementById('partner-msg');
+        if (msgField) {
+          msgField.value = `I am interested in ordering/distributing: ${paramProduct} (${paramOption || 'Pack of 24'}) with a quantity of ${paramQty || '1'}.`;
+        }
+      }
+    }
+
     subpageFranchiseForm.addEventListener('submit', (e) => {
       e.preventDefault();
       subpageFranchiseForm.classList.add('hide');
@@ -1000,6 +1040,10 @@ function bindEvents() {
       if (subpageFranchiseForm) {
         subpageFranchiseForm.reset();
         subpageFranchiseForm.classList.remove('hide');
+        
+        // Hide info box on reset
+        const infoBox = document.getElementById('selected-product-info-box');
+        if (infoBox) infoBox.classList.add('hide');
       }
     });
   }
