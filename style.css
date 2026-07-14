@@ -2668,12 +2668,6 @@ hr {
 
 /* Responsive & Mobile specific styling overrides */
 @media (max-width: 768px) {
-  /* Disable stickiness on mobile so navigation is not obtrusive and frees up vertical screen space */
-  .sf-header.sticky-header {
-    position: relative !important;
-    box-shadow: none !important;
-  }
-  
   /* Slide overlays sizing on mobile */
   .slide-overlay-content {
     width: 90%;
@@ -3747,8 +3741,19 @@ hr {
 }
 
 .nostalgia-card-grid {
-  max-width: 750px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1100px;
   margin: 40px auto 0;
+}
+
+@media (max-width: 768px) {
+  .nostalgia-card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
 }
 
 .nostalgia-card {

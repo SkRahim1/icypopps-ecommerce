@@ -364,10 +364,10 @@
     <div class="wavy-marquee-svg-container" style="position: relative; width: 100%; overflow: hidden; background-color: #ffffff; padding: 20px 0; z-index: 10; margin-bottom: 30px; margin-top: -10px;">
       <svg viewBox="0 0 1440 220" style="width: 100%; height: auto; display: block;">
         <defs>
-          <!-- A steeper sine wave path for a more pronounced curves (up, down, up, down) -->
-          <path id="text-wave-path" d="M -200 110 C 120 10, 320 210, 680 110 C 1040 10, 1240 210, 1600 110 C 1960 10, 2160 210, 2520 110 C 2880 10, 3080 210, 3440 110" fill="none" />
+          <!-- A periodic sine wave path: starts at left center (110), goes UP first, then DOWN, ending at same level (110) -->
+          <path id="text-wave-path" d="M -200 110 C -100 10, 100 10, 200 110 C 300 210, 500 210, 600 110 C 700 10, 900 10, 1000 110 C 1100 210, 1300 210, 1400 110 C 1500 10, 1700 10, 1800 110 C 1900 210, 2100 210, 2200 110" fill="none" />
           <!-- Saffron background stroke line -->
-          <path id="bg-wave-path" d="M -200 110 C 120 10, 320 210, 680 110 C 1040 10, 1240 210, 1600 110 C 1960 10, 2160 210, 2520 110 C 2880 10, 3080 210, 3440 110" fill="none" stroke="#ff9a3d" stroke-width="95" stroke-linecap="round" />
+          <path id="bg-wave-path" d="M -200 110 C -100 10, 100 10, 200 110 C 300 210, 500 210, 600 110 C 700 10, 900 10, 1000 110 C 1100 210, 1300 210, 1400 110 C 1500 10, 1700 10, 1800 110 C 1900 210, 2100 210, 2200 110" fill="none" stroke="#ff9a3d" stroke-width="95" stroke-linecap="round" />
         </defs>
         
         <!-- Draw the saffron background ribbon -->
@@ -412,6 +412,7 @@
             </div>
           </div>
         </div>
+      </div>
     </section>
 
     <!-- Nostalgia Illustration Section: Pop It Like The 90s -->
@@ -419,11 +420,33 @@
       <div class="container text-center">
         <h2 class="section-title-fun">Pop It Like The 90s.</h2>
         <div class="nostalgia-card-grid">
+          <!-- Card 1: Vendor -->
           <div class="nostalgia-card">
             <div class="nostalgia-img-wrap">
-              <img src="images/brand-showcase.jpg" alt="Retro Street Food Cart illustration" />
+              <img src="images/retro-vendor.png" alt="Retro Street Food Cart illustration" />
             </div>
             <p class="nostalgia-caption">No more hunting for your favourite street-side crunch. bubblebox is available fresh at your doorstep.</p>
+          </div>
+          <!-- Card 2: Kids on bench -->
+          <div class="nostalgia-card">
+            <div class="nostalgia-img-wrap">
+              <img src="images/kids-bench.png" alt="Children sharing food" />
+            </div>
+            <p class="nostalgia-caption">Relive those golden childhood school days of sharing crisp, tangy street food with friends.</p>
+          </div>
+          <!-- Card 3: Home Kitchen -->
+          <div class="nostalgia-card">
+            <div class="nostalgia-img-wrap">
+              <img src="images/home-snacks.png" alt="Hygienic home food" />
+            </div>
+            <p class="nostalgia-caption">Clean, certified, RO water purified, and made in a hygienic environment safely at home.</p>
+          </div>
+          <!-- Card 4: Friends Party -->
+          <div class="nostalgia-card">
+            <div class="nostalgia-img-wrap">
+              <img src="images/party-snacks.png" alt="Sharing at party" />
+            </div>
+            <p class="nostalgia-caption">Perfect signature flavors and packs to share with your family and host the best get-togethers.</p>
           </div>
         </div>
       </div>
