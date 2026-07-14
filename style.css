@@ -3371,7 +3371,7 @@ hr {
   }
   .form-row {
     flex-direction: column;
-    gap: 0;
+    gap: 15px;
   }
   .contact-form-card, .franchise-form-wrap {
     padding: 25px 20px;
