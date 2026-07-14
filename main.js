@@ -463,23 +463,10 @@ function openQuickview(productId) {
           ${prod.options.map((opt, idx) => `<button class="option-btn qv-option-btn ${idx === 0 ? 'active' : ''}" data-value="${opt.name}" style="flex: 1; border: 1px solid ${idx === 0 ? '#000000' : '#e0e0e0'}; background-color: ${idx === 0 ? '#000000' : '#ffffff'}; color: ${idx === 0 ? '#ffffff' : '#222222'}; padding: 10px 15px; font-size: 0.95rem; font-weight: 600; border-radius: 4px; cursor: pointer; transition: all 0.2s ease;">${opt.name}</button>`).join('')}
         </div>
       </div>
-
-      <div class="qty-row" style="display: flex; align-items: center; margin-top: 15px; margin-bottom: 25px; gap: 20px;">
-        <span style="font-size: 0.95rem; font-weight: 700; color: #222222; font-family: sans-serif;">Quantity</span>
-        <div class="quantity-stepper" style="display: flex; align-items: center; border: 1px solid #d0d0d0; border-radius: 4px; overflow: hidden; background-color: #ffffff; width: 140px; height: 42px;">
-          <button class="qv-qty-dec" style="flex: 1; border: none; background: none; font-size: 1.2rem; cursor: pointer; color: #555555; height: 100%; display: flex; align-items: center; justify-content: center;">-</button>
-          <input type="number" value="1" min="1" class="qv-qty-input" readonly style="width: 50px; text-align: center; border: none; font-weight: 600; font-size: 1rem; color: #222222; background: none; outline: none; height: 100%; display: flex; align-items: center; justify-content: center;" />
-          <button class="qv-qty-inc" style="flex: 1; border: none; background: none; font-size: 1.2rem; cursor: pointer; color: #555555; height: 100%; display: flex; align-items: center; justify-content: center;">+</button>
-        </div>
-      </div>
-
-      <div class="purchase-actions" style="margin-top: 20px;">
-        <a id="qv-inquire-btn" href="franchisee.html?product=${encodeURIComponent(prod.title)}&option=${encodeURIComponent(defaultOption.name)}&qty=1" class="primary-btn qv-inquire-btn" style="text-align: center; text-decoration: none; display: block; width: 100%; background-color: var(--color-accent); color: #ffffff; padding: 14px 0; font-weight: 700; border-radius: 4px; font-size: 1.05rem; letter-spacing: 0.05em; text-transform: uppercase; border: none; transition: opacity 0.2s ease;">Inquire Now</a>
-      </div>
     </div>
   `;
 
-  // Bind Quickview specific thumbnail and stepper events
+  // Bind Quickview specific thumbnail events
   const qvMain = document.getElementById('qv-main-img');
   const qvThumbs = document.querySelectorAll('.qv-thumb');
   qvThumbs.forEach(thumb => {
@@ -492,11 +479,6 @@ function openQuickview(productId) {
 
   const qvOptionBtns = document.querySelectorAll('.qv-option-btn');
   const qvSelectedOptionLabel = document.getElementById('qv-selected-option-label');
-  const qvInquireBtn = document.getElementById('qv-inquire-btn');
-  
-  const updateInquireHref = (optionName, qty) => {
-    qvInquireBtn.href = `franchisee.html?product=${encodeURIComponent(prod.title)}&option=${encodeURIComponent(optionName)}&qty=${qty}`;
-  };
 
   qvOptionBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -519,30 +501,7 @@ function openQuickview(productId) {
       if (optDetails) {
         document.getElementById('qv-price').textContent = `Rs. ${optDetails.price.toFixed(2)}`;
       }
-      
-      const qvQtyInput = document.querySelector('.qv-qty-input');
-      const qty = qvQtyInput ? parseInt(qvQtyInput.value) : 1;
-      updateInquireHref(optName, qty);
     });
-  });
-
-  // stepper bindings
-  const qvQtyInput = document.querySelector('.qv-qty-input');
-  document.querySelector('.qv-qty-dec').addEventListener('click', () => {
-    let val = parseInt(qvQtyInput.value);
-    if (val > 1) {
-      qvQtyInput.value = val - 1;
-      const activeOptBtn = document.querySelector('.qv-option-btn.active');
-      const selectedOption = activeOptBtn ? activeOptBtn.dataset.value : prod.options[0].name;
-      updateInquireHref(selectedOption, val - 1);
-    }
-  });
-  document.querySelector('.qv-qty-inc').addEventListener('click', () => {
-    let val = parseInt(qvQtyInput.value);
-    qvQtyInput.value = val + 1;
-    const activeOptBtn = document.querySelector('.qv-option-btn.active');
-    const selectedOption = activeOptBtn ? activeOptBtn.dataset.value : prod.options[0].name;
-    updateInquireHref(selectedOption, val + 1);
   });
 
   openModal(DOM.quickviewModal);
